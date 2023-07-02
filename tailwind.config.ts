@@ -1,11 +1,12 @@
+import { orbitron, atkinson_hyperlegible } from './src/lib/fonts';
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,md,mdx}',
 	],
   theme: {
     container: {
@@ -16,6 +17,19 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-roboto)'],
+        display: ['var(--font-orbitron)'],
+        mono: ['var(--font-roboto-mono)'],
+        roboto: ['var(--font-roboto)'],
+        condensed: ['var(--font-roboto-)'],
+        flex: ['var(--font-roboto-flex)'],
+        slab: ['var(--font-roboto-slab)'],
+        orbitron: ['var(--font-orbitron)'],
+        iceland: ['var(--font-iceland)'],
+        atkinson_hyperlegible: ['var(--font-atkinson-hyperlegible)'],
+       
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

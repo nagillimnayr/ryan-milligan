@@ -4,12 +4,12 @@ import HeroSection from '@/components/hero/HeroSection'
 import HeroDescription from '@/components/hero/HeroDescription'
 import HeroHeader from '@/components/hero/HeroHeader'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between pt-10 px-24 pb-24 font-roboto`}
     >
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
@@ -47,9 +47,9 @@ export default function Home() {
         />
       </div> */}
 
-    <section className='container flex flex-col border-2 rounded-lg min-h-fit h-96 py-8 px-12 gap-2 items-center justify-center '>
-      <HeroHeader className='border-2 border-red-500'>Hello World!</HeroHeader>
-        <HeroDescription className='w-96 border-2 border-red-500'>
+    <section className='container flex flex-col border-2 rounded-xl min-h-fit h-96 py-8 px-12 gap-2 items-center justify-center '>
+      <HeroHeader className=''>Hello World!</HeroHeader>
+        <HeroDescription className='w-96 text-center'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </HeroDescription>
     </section>
