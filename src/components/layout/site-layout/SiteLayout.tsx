@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@/components/providers/theme-provider";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import Providers from "@/components/providers/providers";
@@ -9,14 +8,10 @@ type SiteLayoutProps = {
 export default function SiteLayout({children}: SiteLayoutProps) {
 
   return(
-  <html suppressHydrationWarning>
-      <body>
     <Providers>
       <SiteHeader/>
       {children}
       <SiteFooter/>
     </Providers>
-    </body>
-    </html>
   )
 }
