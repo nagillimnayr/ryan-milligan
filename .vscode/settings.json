@@ -1,0 +1,10 @@
+{
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnSaveMode": "file",
+    "files.autoSave": "off",
+    "files.eol": "\n"
+}
