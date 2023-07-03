@@ -8,7 +8,7 @@ interface HeroCTAProps extends ButtonProps {
 export default function HeroCTA(props: HeroCTAProps) {
 
   return(
-    <Button variant={props.variant} className={props.className} onClick={props.onClick}>
+    <Button asChild variant={props.variant} className={props.className} onClick={props.onClick}>
       <Link href={props.href} >
         {props.children}
       </Link>
