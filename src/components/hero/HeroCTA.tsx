@@ -1,17 +1,18 @@
 import { type URL } from "url";
-import { Button } from "../ui/button";
+import { Button, type ButtonProps } from "../ui/button";
 import Link from "next/link";
 
-type HeroCTAProps = {
-  children: string;
+interface HeroCTAProps extends ButtonProps {
   href: string | URL;
 }
 export default function HeroCTA(props: HeroCTAProps) {
 
   return(
-    <Link href={props.href} >
-      <Button >{props.children}</Button>
-    </Link>
+    <Button variant={props.variant} className={props.className} onClick={props.onClick}>
+      <Link href={props.href} >
+        {props.children}
+      </Link>
+    </Button>
 
   )
 }
