@@ -18,8 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-roboto)'],
-        display: ['var(--font-orbitron)'],
+        sans: ['var(--font-atkinson-hyperlegible)'],
+        display: ['var(--font-roboto-slab)'],
         mono: ['var(--font-roboto-mono)'],
         roboto: ['var(--font-roboto)'],
         condensed: ['var(--font-roboto-)'],
