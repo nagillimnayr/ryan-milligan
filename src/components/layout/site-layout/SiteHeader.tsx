@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeSwitch from "./ThemeSwitch";
 
 
 export default function SiteHeader() {
@@ -10,6 +11,8 @@ export default function SiteHeader() {
           </div>
           <h2 className="text-3xl font-extrabold font-orbitron">Site Header</h2>
         </Link>
+
+        <ThemeSwitch className="ml-auto mr-4"/>
       </header>
   )
 }
