@@ -8,7 +8,7 @@ type HeroDescProps = {
 export default function HeroDescription(props: HeroDescProps) {
 
   return(
-    <p className={cn(props.className, 'text-primary')}>
+    <p className={cn(props.className)}>
       {props.children}
     </p>
   )
