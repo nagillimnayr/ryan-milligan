@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import HeroSection from '@/components/hero/HeroSection'
 import HeroDescription from '@/components/hero/HeroDescription'
 import HeroHeader from '@/components/hero/HeroHeader'
+import HeroCTA from '@/components/hero/HeroCTA'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -52,6 +53,10 @@ export default function Home() {
         <HeroDescription className='w-96 text-center'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </HeroDescription>
+        <div className='flex flex-row gap-8'>
+          <HeroCTA href={'/projects'}>Get started</HeroCTA>
+          <HeroCTA variant={'secondary'} href={'/about'}>Learn more</HeroCTA>
+        </div>
     </section>
 
 
