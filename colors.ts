@@ -5,6 +5,8 @@ export const colors = {
         DEFAULT: twColors.violet[500],
         light: twColors.violet[400],
         dark: twColors.violet[600],
+        hover: twColors.violet[600],
+        active: twColors.violet[700],
     },
     indigo: {
         DEFAULT: twColors.indigo[500],
