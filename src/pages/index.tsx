@@ -38,13 +38,15 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-2 rounded-xl border-2 px-12 py-8 lg:max-w-3xl">
-                <HeroHeader>Hello World!</HeroHeader>
-                <HeroDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </HeroDescription>
+            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 lg:max-w-3xl ">
+                <div className="flex flex-col items-center justify-center gap-2">
+                    <HeroHeader>Hello World!</HeroHeader>
+                    <HeroDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                    </HeroDescription>
+                </div>
                 <div className="flex flex-row gap-8">
                     <HeroCTA href={'/projects'}>Get started</HeroCTA>
                     <HeroCTA variant={'secondary'} href={'/about'}>
