@@ -38,7 +38,7 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <section className="container flex h-96 min-h-fit max-w-[48rem] flex-col items-center justify-center gap-2 rounded-xl border-2 px-12 py-8">
+            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-2 rounded-xl border-2 px-12 py-8 lg:max-w-3xl">
                 <HeroHeader>Hello World!</HeroHeader>
                 <HeroDescription>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
