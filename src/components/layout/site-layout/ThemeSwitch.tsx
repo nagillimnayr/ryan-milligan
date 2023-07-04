@@ -2,13 +2,23 @@ import { Switch } from '@/components/ui/switch';
 import { IconSwitch } from '@/components/ui/switch-icon';
 import { cn } from '@/lib/utils';
 import { MoonIcon, SunIcon } from 'lucide-react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 type ThemeSwitchProps = {
     className?: string;
 };
 const ThemeSwitch = (props: ThemeSwitchProps) => {
-    const [enabled, setEnabled] = useState<boolean>(false);
+    const { setTheme } = useTheme();
+    const [darkMode, setDarkMode] = useState<boolean>(false);
+
+    const handleChangeChecked = useCallback((checked: boolean) => {
+        setDarkMode(checked);
+    }, []);
+
+    // set theme
+    darkMode ? setTheme('dark') : setTheme('light');
+
     return (
         <div
             className={cn(
@@ -17,13 +27,10 @@ const ThemeSwitch = (props: ThemeSwitchProps) => {
             )}
         >
             <IconSwitch
-                defaultChecked={enabled}
-                checked={enabled}
-                onCheckedChange={(checked) => {
-                    setEnabled(checked);
-                }}
+                checked={darkMode}
+                onCheckedChange={handleChangeChecked}
             >
-                {enabled ? <MoonIcon size={24} /> : <SunIcon size={24} />}
+                {darkMode ? <MoonIcon size={24} /> : <SunIcon size={24} />}
             </IconSwitch>
         </div>
     );
