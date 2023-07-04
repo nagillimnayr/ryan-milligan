@@ -1,6 +1,9 @@
 import { orbitron, atkinson_hyperlegible } from './src/lib/fonts';
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import { type Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
+import defaultTheme from 'tailwindcss/defaultTheme';
+export default {
     darkMode: ['class'],
     content: [
         './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
@@ -93,12 +96,12 @@ module.exports = {
             },
             keyframes: {
                 'accordion-down': {
-                    from: { height: 0 },
+                    from: { height: '0' },
                     to: { height: 'var(--radix-accordion-content-height)' },
                 },
                 'accordion-up': {
                     from: { height: 'var(--radix-accordion-content-height)' },
-                    to: { height: 0 },
+                    to: { height: '0' },
                 },
             },
             animation: {
@@ -112,4 +115,4 @@ module.exports = {
         require('@tailwindcss/container-queries'),
         require('tailwindcss-animate'),
     ],
-};
+} satisfies Config;
