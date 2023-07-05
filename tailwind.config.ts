@@ -22,8 +22,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: [
-                    'var(--font-roboto)',
                     'var(--font-atkinson-hyperlegible)',
+                    'var(--font-roboto)',
                 ],
                 display: ['var(--font-roboto-slab)'],
                 mono: ['var(--font-roboto-mono)'],

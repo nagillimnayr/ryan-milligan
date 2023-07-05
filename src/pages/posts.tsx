@@ -24,10 +24,10 @@ const PostsPage = ({ postsData, title, description }: PostsProps) => {
         <PageLayout title={'Posts'}>
             <div>
                 <ul>
-                    {postsData.map(({ slug, data }) => {
+                    {postsData.map(({ slug }) => {
                         return (
                             <li key={slug}>
-                                <Link href={`/posts/${slug}`}>{slug}</Link>
+                                <Link href={`/blog/${slug}`}>{slug}</Link>
                             </li>
                         );
                     })}
