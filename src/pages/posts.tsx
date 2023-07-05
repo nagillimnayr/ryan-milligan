@@ -1,3 +1,4 @@
+import PageLayout from '@/components/layout/page-layout/PageLayout';
 import { type PostData, getSortedPostsData } from '@/lib/md/getPosts';
 import Link from 'next/link';
 
@@ -20,11 +21,7 @@ export async function getStaticProps() {
 
 const PostsPage = ({ postsData, title, description }: PostsProps) => {
     return (
-        <section>
-            <header>
-                <h1>{title}</h1>
-                <p>{description}</p>
-            </header>
+        <PageLayout title={'Posts'}>
             <div>
                 <ul>
                     {postsData.map(({ slug, data }) => {
@@ -36,7 +33,7 @@ const PostsPage = ({ postsData, title, description }: PostsProps) => {
                     })}
                 </ul>
             </div>
-        </section>
+        </PageLayout>
     );
 };
 

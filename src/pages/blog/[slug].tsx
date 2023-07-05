@@ -1,12 +1,16 @@
-const PostPage = () => {
+import PageLayout from '@/components/layout/page-layout/PageLayout';
+
+type PostPageProps = {
+    title: string;
+    slug: string;
+    content: string;
+};
+
+const PostPage = ({ title, slug, content }: PostPageProps) => {
     return (
-        <section>
-            <header>
-                <h1>Placeholder Title</h1>
-                <p>description</p>
-            </header>
-            <div></div>
-        </section>
+        <>
+            <PageLayout title={title}>{content}</PageLayout>
+        </>
     );
 };
 
