@@ -13,16 +13,19 @@ type PageLayoutProps = {
     children?: React.ReactNode;
     title: string;
     subtitle?: string;
+    className?: string;
 };
 export default function PageLayout({
     children,
     title,
     subtitle,
+    className,
 }: PageLayoutProps) {
     return (
         <section
             className={cn(
-                'container prose prose-invert mt-8 flex h-full w-full flex-col justify-start font-sans text-foreground'
+                'container prose prose-invert mt-8 flex h-fit min-h-screen w-full flex-col justify-start font-sans text-foreground',
+                className
             )}
         >
             <PageHeader title={title} subtitle={subtitle} />
