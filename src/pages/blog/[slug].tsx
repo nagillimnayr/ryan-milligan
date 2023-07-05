@@ -12,7 +12,10 @@ const PostPage = (props: PostData) => {
     return (
         <>
             <PageLayout title={props.title}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                >
                     {props.content}
                 </ReactMarkdown>
             </PageLayout>
