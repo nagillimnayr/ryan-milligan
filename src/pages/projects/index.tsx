@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import { type NextPage } from "next";
+import { type NextPage } from 'next';
+import PageLayout from '@/components/layout/page-layout/PageLayout';
 
 const ProjectsPage: NextPage = () => {
-
-  return (
-    <>
-    <Head>
+    return (
+        <>
+            {/* <Head>
       <title>Projects</title>
       <meta name="description" content="" />
       <link
@@ -13,12 +13,10 @@ const ProjectsPage: NextPage = () => {
         type="image/favicon"
         href="/favicon.ico"
         />
-    </Head>
-    <div>
-      <h1>Projects</h1>
-    </div>
-    </>
-  )
-}
+    </Head> */}
+            <PageLayout title="Projects"></PageLayout>
+        </>
+    );
+};
 
 export default ProjectsPage;
