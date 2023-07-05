@@ -89,3 +89,22 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .bg-anim-diagonal {
+        background-size: 400% 400%;
+        /* @apply bg-gradient-to-br from-sky-500 to-red-500; */
+        animation: diagonal-bg 15s ease infinite;
+    }
+    @keyframes diagonal-bg {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}

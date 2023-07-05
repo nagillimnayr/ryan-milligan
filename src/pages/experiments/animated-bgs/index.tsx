@@ -1,5 +1,5 @@
 import PageLayout from '@/components/layout/page-layout/PageLayout';
-import { NextPage } from 'next';
+import { type NextPage } from 'next';
 import Link from 'next/link';
 
 const Page: NextPage = () => {
@@ -8,11 +8,15 @@ const Page: NextPage = () => {
             <PageLayout title="Animated Backgrounds">
                 <ul>
                     <ListItem
-                        key="gradient"
+                        id="gradient"
                         title="Animated Gradient"
                         href="https://www.sliderrevolution.com/resources/css-animated-background/"
                     >
-                        <div className="bg-anim-gradient h-96 w-full"></div>
+                        <div className="bg-anim-diagonal h-96 w-full border-2 bg-gradient-to-br from-sky-500 to-red-500 "></div>
+                        <desc>
+                            Re-implemented this animated gradient background
+                            with Tailwind
+                        </desc>
                     </ListItem>
                 </ul>
             </PageLayout>
@@ -20,17 +24,15 @@ const Page: NextPage = () => {
     );
 };
 
-export default Page;
-
 type ListItemProps = {
-    key: string;
+    id: string;
     title: string;
     href: string;
     children: React.ReactNode;
 };
-const ListItem = ({ key, title, href, children }: ListItemProps) => {
+const ListItem = ({ id, title, href, children }: ListItemProps) => {
     return (
-        <li key={key}>
+        <li key={id}>
             <section className="flex-start container flex flex-col">
                 <header className="border-b-2">
                     <h3>{title}</h3>
@@ -41,3 +43,5 @@ const ListItem = ({ key, title, href, children }: ListItemProps) => {
         </li>
     );
 };
+
+export default Page;
