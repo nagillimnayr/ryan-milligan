@@ -168,5 +168,6 @@ export default {
         require('@tailwindcss/typography'),
         require('@tailwindcss/container-queries'),
         require('tailwindcss-animate'),
+        require('@headlessui/tailwindcss'),
     ],
 } satisfies Config;
