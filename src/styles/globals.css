@@ -91,6 +91,12 @@
 }
 
 @layer utilities {
+    /* position the dropdown such that its center
+    aligns with that of its parent */
+    .dropdown-center {
+        @apply absolute left-[50%] top-full -translate-x-1/2;
+    }
+
     .bg-anim-diagonal {
         background-size: 400% 400%;
         /* @apply bg-gradient-to-br from-sky-500 to-red-500; */

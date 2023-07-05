@@ -18,7 +18,7 @@ const NavMenu = () => {
             </Menu.Button>
             <Menu.Items
                 className={
-                    'absolute top-full flex origin-top flex-col justify-start'
+                    'dropdown-center flex w-fit min-w-fit  flex-col justify-start whitespace-nowrap rounded-md border-2'
                 }
             >
                 {links.map(({ href, label }) => {
