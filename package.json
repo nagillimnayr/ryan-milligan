@@ -43,6 +43,7 @@
     "react": "18.2.0",
     "react-day-picker": "^8.8.0",
     "react-dom": "18.2.0",
+    "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "tailwind-merge": "^1.13.2",
     "valtio": "^1.10.6"
