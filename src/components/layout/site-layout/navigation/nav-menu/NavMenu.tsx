@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 const links = [
-    { href: '/account-settings', label: 'Account settings' },
-    { href: '/support', label: 'Support' },
-    { href: '/license', label: 'License' },
-    { href: '/sign-out', label: 'Sign out' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/experiments', label: 'Experiments' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
 ];
 
 const NavMenu = () => {
@@ -25,22 +25,14 @@ const NavMenu = () => {
                     return (
                         /* Use the `active` state to conditionally style the active item.*/
                         <Menu.Item key={href} as={Fragment}>
-                            {({ active }) => {
-                                return (
-                                    <Link
-                                        href={href}
-                                        className={cn(
-                                            'bg-white px-2 font-sans text-black',
-                                            {
-                                                'bg-indigo-400 text-white ':
-                                                    active,
-                                            }
-                                        )}
-                                    >
-                                        {label}
-                                    </Link>
-                                );
-                            }}
+                            <Link
+                                href={href}
+                                className={
+                                    'bg-background px-2 font-sans text-foreground ui-active:bg-indigo-400 ui-active:text-white'
+                                }
+                            >
+                                {label}
+                            </Link>
                         </Menu.Item>
                     );
                 })}
