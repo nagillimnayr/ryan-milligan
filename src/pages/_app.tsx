@@ -1,11 +1,14 @@
 import SiteLayout from '@/components/layout/site-layout/SiteLayout';
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import Providers from '@/components/providers/providers';
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <SiteLayout>
-      <Component {...pageProps} />
-    </SiteLayout>
-  );
+    return (
+        <Providers>
+            <SiteLayout>
+                <Component {...pageProps} />
+            </SiteLayout>
+        </Providers>
+    );
 }

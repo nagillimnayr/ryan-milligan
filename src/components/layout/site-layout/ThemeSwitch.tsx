@@ -1,23 +1,33 @@
-import { Switch } from '@/components/ui/switch';
 import { IconSwitch } from '@/components/ui/switch-icon';
 import { cn } from '@/lib/utils';
 import { MoonIcon, SunIcon } from 'lucide-react';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 type ThemeSwitchProps = {
     className?: string;
 };
 const ThemeSwitch = (props: ThemeSwitchProps) => {
-    const { setTheme } = useTheme();
+    const { theme, setTheme } = useTheme();
     const [darkMode, setDarkMode] = useState<boolean>(false);
 
-    const handleChangeChecked = useCallback((checked: boolean) => {
-        setDarkMode(checked);
-    }, []);
+    useEffect(() => {
+        setDarkMode(theme === 'dark' ?? false);
+    }, [theme]);
 
-    // set theme
-    darkMode ? setTheme('dark') : setTheme('light');
+    const handleChangeChecked = useCallback(
+        (checked: boolean) => {
+            setDarkMode(checked);
+            if (checked) {
+                setTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                setTheme('light');
+                localStorage.setItem('theme', 'light');
+            }
+        },
+        [setTheme]
+    );
 
     return (
         <div
