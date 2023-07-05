@@ -1,55 +1,57 @@
-import fs, { readdir } from 'fs-extra';
+import fs from 'fs-extra';
 import path from 'path';
 import matter from 'gray-matter';
+import z from 'zod';
+
+const frontMatterSchema = z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+});
 
 const root = path.join(process.cwd(), 'src');
 export type PostData = {
     slug: string;
-    data: {
-        [key: string]: any;
-    };
+    title: string;
+    date: string;
+    content: string;
 };
 export async function getSortedPostsData() {
     const postsDirectory = path.join(root, 'posts');
     const fileNames = await fs.readdir(postsDirectory);
-    const allPostsData = await Promise.all(
+    const allPostsData: PostData[] = await Promise.all(
         fileNames.map(async (fileName) => {
             // Remove ".md" from file name to get id
             const slug = fileName.replace(/\.mdx?$/, '');
 
             // read file as string
             const fullPath = path.join(postsDirectory, fileName);
-            const contents = await fs.readFile(fullPath, 'utf8');
+            const fileContents = await fs.readFile(fullPath, 'utf8');
 
             // parse frontmatter of file
-            const matterResult = matter(contents);
+            const { data, content } = matter(fileContents);
+            const matterResult = await frontMatterSchema.safeParseAsync(data);
+
+            const { title, date } = matterResult.success
+                ? matterResult.data
+                : { title: '', date: new Date() };
 
             const post: PostData = {
                 slug,
-                data: matterResult.data,
+                title,
+                date: date.toDateString(),
+                content,
             };
             return post;
         })
-    );
+    ).catch((reason) => {
+        console.error(reason);
+        throw new Error(reason);
+    });
 
     // sort posts by data
-    //return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
-    return allPostsData;
-}
-
-export async function getFiles(directory: string) {
-    return fs.readdir(path.join(root, 'posts', directory));
-}
-
-export async function getPostBySlug(directory: string, slug: string) {
-    const source = await fs.readFile(
-        path.join(root, 'posts', directory, `${slug}.mdx`)
+    const allPostDataDefined: PostData[] = allPostsData.filter(
+        (postData) => postData.title !== ''
     );
 
-    const { data, content } = matter(source);
-
-    return {
-        frontMatter: data,
-        markdownBody: content,
-    };
+    return allPostDataDefined.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
