@@ -16,10 +16,25 @@ import Link from 'next/link';
 type NavItem = {
     title: string;
     href: string;
-    description: string;
+    description?: string;
 };
 
-const navItems: NavItem[] = [
+const mainNavItems: NavItem[] = [
+    {
+        title: 'Projects',
+        href: '/projects',
+    },
+    {
+        title: 'Experiments',
+        href: '/experiments',
+    },
+    {
+        title: 'Posts',
+        href: '/posts',
+    },
+];
+
+const navListItems: NavItem[] = [
     {
         title: 'Alert Dialog',
         href: '/docs/primitives/alert-dialog',
@@ -65,31 +80,30 @@ const NavMenu = ({ className }: NavMenuProps) => {
         <NavigationMenu className={cn('font-display font-semibold', className)}>
             <NavigationMenuList className="border-2 ">
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
                     <NavigationMenuContent className="w-full">
-                        <NavMenuLink href="/">Link1</NavMenuLink>
+                        <NavMenuLink href="/projects">Projects</NavMenuLink>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>Experiments</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <NavMenuLink href="/">Link2</NavMenuLink>
+                        <NavMenuLink href="/experiments">
+                            Experiments
+                        </NavMenuLink>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Item Three</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavMenuLink href="/">Link3</NavMenuLink>
-                    </NavigationMenuContent>
+                    <NavMenuLink href="/posts">Posts</NavMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>List</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul>
-                            {navItems.map((item) => {
+                            {navListItems.map((item) => {
                                 return (
                                     <li key={item.title}>
                                         <NavMenuLink href={item.href}>
@@ -100,6 +114,10 @@ const NavMenu = ({ className }: NavMenuProps) => {
                             })}
                         </ul>
                     </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavMenuLink href="/contact">Contact</NavMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
