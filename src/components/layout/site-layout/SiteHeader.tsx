@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import MainNav from './navigation/MainNav';
-import NavMenu from './navigation/nav-menu/NavMenu';
+import Navbar from './navigation/nav-menu/NavBar';
 
 export default function SiteHeader() {
     return (
@@ -17,7 +17,7 @@ export default function SiteHeader() {
             </Link>
 
             {/* <MainNav /> */}
-            <NavMenu className="ml-auto mr-8" />
+            <Navbar className="ml-auto mr-8" />
             <ThemeSwitch className="ml-auto mr-4" />
         </header>
     );

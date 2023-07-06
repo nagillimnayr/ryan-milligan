@@ -10,7 +10,7 @@ const links = [
     { href: '/contact', label: 'Contact' },
 ];
 
-const NavMenu = () => {
+const Navbar = () => {
     return (
         <Menu as="div" className={'relative ml-auto flex flex-row'}>
             <Menu.Button className={' rounded-md border-2 p-2 font-sans'}>
@@ -41,4 +41,4 @@ const NavMenu = () => {
     );
 };
 
-export default NavMenu;
+export default Navbar;
