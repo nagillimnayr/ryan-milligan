@@ -22,14 +22,18 @@ export default function PageLayout({
     className,
 }: PageLayoutProps) {
     return (
-        <section
-            className={cn(
-                'container prose prose-invert mt-8 flex h-fit min-h-screen w-full flex-col justify-start font-sans text-foreground',
-                className
-            )}
-        >
+        <div className="container prose prose-invert flex h-fit min-h-screen w-full flex-col justify-start pt-8 font-sans text-foreground">
             <PageHeader title={title} subtitle={subtitle} />
-            {children}
-        </section>
+            <main
+                className={
+                    (cn(
+                        'container flex h-fit min-h-screen w-full flex-col items-center justify-start'
+                    ),
+                    className)
+                }
+            >
+                {children}
+            </main>
+        </div>
     );
 }
