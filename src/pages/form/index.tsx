@@ -1,4 +1,5 @@
 import TestForm from '@/components/form/TestForm';
+import TextInputForm from '@/components/form/TextInputForm';
 import PageLayout from '@/components/layout/page-layout/PageLayout';
 
 const TestPage = () => {
@@ -8,7 +9,7 @@ const TestPage = () => {
                 <header className="">
                     <h2>Form Test</h2>
                 </header>
-                <TestForm />
+                <TextInputForm />
             </section>
         </PageLayout>
     );
