@@ -2,42 +2,46 @@ import { Menu } from '@headlessui/react';
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import NavDropdownMenu from './NavDropdownMenu';
+import NavMenuLink from './NavMenuLink';
+import { ClassNameProp } from '@/components/props/Props';
 
-const links = [
+const mainLinks = [
     { href: '/projects', label: 'Projects' },
     { href: '/experiments', label: 'Experiments' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
 ];
 
-const Navbar = () => {
+const otherLinks = [
+    { href: '/other', label: 'Other' },
+    { href: '/misc', label: 'Misc' },
+    { href: '/etc', label: 'Etc.' },
+    { href: '/test', label: 'Test' },
+];
+
+const btnStyle = `rounded-md border-0 py-2 px-4 font-sans h-full hover:bg-foreground/10 ui-open:bg-foreground/10`;
+
+const Navbar = ({ className }: ClassNameProp) => {
     return (
-        <Menu as="div" className={'relative ml-auto flex flex-row'}>
-            <Menu.Button className={' rounded-md border-2 p-2 font-sans'}>
-                Options
-            </Menu.Button>
-            <Menu.Items
-                className={
-                    'dropdown-center flex w-fit min-w-fit  flex-col justify-start whitespace-nowrap rounded-md border-2'
-                }
-            >
-                {links.map(({ href, label }) => {
-                    return (
-                        /* Use the `active` state to conditionally style the active item.*/
-                        <Menu.Item key={href} as={Fragment}>
-                            <Link
-                                href={href}
-                                className={
-                                    'bg-background px-2 font-sans text-foreground ui-active:bg-indigo-400 ui-active:text-white'
-                                }
-                            >
-                                {label}
-                            </Link>
-                        </Menu.Item>
-                    );
-                })}
-            </Menu.Items>
-        </Menu>
+        <nav
+            className={cn(
+                'relative ml-auto flex h-fit w-fit flex-row items-center justify-start gap-0 rounded-md border-2 p-1',
+                className
+            )}
+        >
+            {mainLinks.map(({ href, label }) => {
+                return (
+                    <NavMenuLink key={href} href={href} className={btnStyle}>
+                        {label}
+                    </NavMenuLink>
+                );
+            })}
+
+            <NavDropdownMenu links={otherLinks} className={btnStyle}>
+                <div className="inline-flex gap-3">Other</div>
+            </NavDropdownMenu>
+        </nav>
     );
 };
 
