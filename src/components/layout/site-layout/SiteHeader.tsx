@@ -17,7 +17,7 @@ export default function SiteHeader() {
             </Link>
 
             {/* <MainNav /> */}
-            <Navbar className="ml-auto mr-8" />
+            <Navbar />
             <ThemeSwitch className="ml-auto mr-4" />
         </header>
     );
