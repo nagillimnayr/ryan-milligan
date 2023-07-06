@@ -124,44 +124,72 @@ export default {
                 'diagonal-bg': 'diagonal-bg 5s ease infinite',
             },
 
-            // typography: () => ({
-            //     base: {
-            //         css: {
-            //             '--tw-prose-body': 'var(--)',
-            //             '--tw-headings': 'var(--) ',
-            //             '--tw-prose-lead': 'var(--)',
-            //             '--tw-prose-links': 'var(--)',
-            //             '--tw-prose-bold': 'var(--)',
-            //             '--tw-prose-counters': 'var(--)',
-            //             '--tw-prose-bullets': 'var(--)',
-            //             '--tw-prose-hr': 'var(--)',
-            //             '--tw-prose-quotes': 'var(--)',
-            //             '--tw-prose-quote-borders': 'var(--)',
-            //             '--tw-prose-captions': 'var(--)',
-            //             '--tw-prose-code': 'var(--)',
-            //             '--tw-prose-pre-code': 'var(--)',
-            //             '--tw-prose-pre-bg': 'var(--)',
-            //             '--tw-prose-th-borders': 'var(--)',
-            //             '--tw-prose-td-borders': 'var(--)',
-            //             '--tw-prose-invert-body': 'var(--)',
-            //             '--tw-prose-invert-headings': 'var(--)',
-            //             '--tw-prose-invert-lead': 'var(--)',
-            //             '--tw-prose-invert-links': 'var(--)',
-            //             '--tw-prose-invert-bold': 'var()',
-            //             '--tw-prose-invert-counters': 'var(--)',
-            //             '--tw-prose-invert-bullets': 'var(--)',
-            //             '--tw-prose-invert-hr': 'var(--)',
-            //             '--tw-prose-invert-quotes': 'var(--)',
-            //             '--tw-prose-invert-quote-borders': 'var(--)',
-            //             '--tw-prose-invert-captions': 'var(--)',
-            //             '--tw-prose-invert-code': 'var(--)',
-            //             'tw- prose - invert - pre - code': 'var(--) ',
-            //             '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
-            //             '--tw-prose-invert-th-borders': 'var(--)',
-            //             '--tw-prose-invert-td-borders': 'var(--)',
-            //         },
-            //     },
-            // }),
+            typography: () => ({
+                DEFAULT: {
+                    css: {
+                        '--tw-prose-body':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-headings':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-lead':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-links': 'colors.sky[900]',
+                        '--tw-prose-bold':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-counters':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-bullets':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-hr':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-quotes':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-quote-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-captions':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-code':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-pre-code':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-pre-bg':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-th-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-td-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-body':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-headings':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-lead':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-links':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-bold':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-counters':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-bullets':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-hr':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-quotes':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-quote-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-captions':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-code':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+                        '--tw-prose-invert-th-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                        '--tw-prose-invert-td-borders':
+                            'hsl(var(--foreground) / <alpha-value>)',
+                    },
+                },
+            }),
         },
     },
     plugins: [
