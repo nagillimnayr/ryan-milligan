@@ -9,8 +9,14 @@ const TestPage = () => {
                 hover="bg-gray-400/20"
                 className="container h-96 items-center rounded-lg "
             >
-                <header flex="col" border="2" className="items-center">
-                    <h2>Form Test</h2>
+                <header
+                    bg="gray/20"
+                    border="1"
+                    className="flex flex-col items-center justify-start p-2"
+                >
+                    <h2 border="2 white" py="2" px="2">
+                        Form Test
+                    </h2>
                 </header>
                 <TextInputForm />
             </section>

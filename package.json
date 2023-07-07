@@ -86,6 +86,7 @@
     "@typescript-eslint/parser": "^5.60.1",
     "@unocss/postcss": "^0.53.4",
     "@unocss/transformer-attributify-jsx-babel": "^0.53.4",
+    "@unocss/webpack": "^0.53.4",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.44.0",
     "eslint-config-next": "^13.4.7",
