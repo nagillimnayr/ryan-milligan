@@ -6,19 +6,19 @@ const TestPage = () => {
     return (
         <PageLayout title="Test Form Page">
             <section
-                hover="bg-gray-400/20"
-                className="container h-96 items-center rounded-lg "
+                border="2"
+                className="flex-start container flex h-fit w-96 min-w-fit flex-col items-center gap-4 rounded-lg py-10"
             >
                 <header
-                    bg="gray/20"
-                    border="1"
-                    className="flex flex-col items-center justify-start p-2"
+                    border="2"
+                    hover="bg-gray-400/20"
+                    className="flex w-full min-w-fit flex-col items-center justify-start p-2 text-center"
                 >
-                    <h2 border="2 white" py="2" px="2">
+                    <h2 border="2 white" p="2" m="0">
                         Form Test
                     </h2>
                 </header>
-                <TextInputForm />
+                <TextInputForm className="w-96 border-2 p-2" />
             </section>
         </PageLayout>
     );

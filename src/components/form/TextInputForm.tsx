@@ -29,13 +29,13 @@ const TextInputForm = ({ className }: FormProps) => {
         <form
             onSubmit={handleSubmit(onSubmit)}
             className={cn(
-                'container flex h-fit w-fit flex-col items-center justify-start gap-4',
+                'flex h-fit w-fit flex-col items-center justify-start gap-4',
                 className
             )}
         >
             {/* register your input into the hook by invoking the "register" function */}
             <input
-                className="rounded-md border-2 px-2"
+                className="w-full rounded-md border-2 px-2"
                 placeholder="test"
                 defaultValue={''}
                 {...register('example', { required: true })}
@@ -43,7 +43,7 @@ const TextInputForm = ({ className }: FormProps) => {
 
             {/* include validation with required or other standard HTML validation rules */}
             <textarea
-                className="rounded-md border-2 px-2"
+                className="w-full rounded-md border-2 px-2"
                 {...register('exampleRequired', { required: true })}
             />
 
