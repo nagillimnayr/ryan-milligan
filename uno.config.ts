@@ -1,3 +1,5 @@
+import { presetHeadlessUi } from 'unocss-preset-primitives';
+import { presetRadixUi } from 'unocss-preset-primitives';
 import {
     defineConfig,
     presetAttributify,
@@ -35,6 +37,8 @@ export default defineConfig({
                 // ...
             },
         }),
+        presetHeadlessUi(),
+        presetRadixUi(),
     ],
     transformers: [
         transformerDirectives(),
