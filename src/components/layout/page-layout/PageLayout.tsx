@@ -8,6 +8,7 @@ import {
 } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import PageHeader from './PageHeader';
+import Head from 'next/head';
 
 type PageLayoutProps = {
     children?: React.ReactNode;
@@ -23,7 +24,9 @@ export default function PageLayout({
 }: PageLayoutProps) {
     return (
         <div className="container prose prose-invert flex h-fit min-h-screen w-full flex-col justify-start pt-8 font-sans text-foreground">
-            <PageHeader title={title} subtitle={subtitle} />
+            <Head>
+                <title key={title}>{title}</title>
+            </Head>
             <main
                 className={
                     (cn(
