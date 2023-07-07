@@ -5,8 +5,11 @@ import PageLayout from '@/components/layout/page-layout/PageLayout';
 const TestPage = () => {
     return (
         <PageLayout title="Test Form Page">
-            <section className="container h-96 rounded-lg border-2">
-                <header className="">
+            <section
+                hover="bg-gray-400/20"
+                className="container h-96 items-center rounded-lg "
+            >
+                <header flex="col" border="2" className="items-center">
                     <h2>Form Test</h2>
                 </header>
                 <TextInputForm />
