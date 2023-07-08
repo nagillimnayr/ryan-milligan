@@ -13,7 +13,7 @@ const AnimationsPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <Head>
+            {/* <Head>
                 <title>Experiments</title>
                 <meta name="description" content="" />
                 <link
@@ -22,7 +22,7 @@ const AnimationsPage = ({
                     href="/favicon/lightmode/favicon.svg"
                 />
                 <link rel="icon" type="favicon" href="/favicon.ico" />
-            </Head>
+            </Head> */}
             <div className="prose mx-auto mt-4 flex w-full flex-col items-center justify-start font-sans text-foreground prose-headings:text-foreground">
                 <h1>Experiments</h1>
 

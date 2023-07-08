@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Page: NextPage = () => {
     return (
         <>
-            <PageLayout title="Animated Backgrounds">
+            <section>
                 <ul className="">
                     <ListItem
                         id="gradient"
@@ -17,7 +17,7 @@ const Page: NextPage = () => {
                         <div className="bg-anim-diagonal h-96 w-full border-2 bg-gradient-to-br from-sky-500 to-red-500 "></div>
                     </ListItem>
                 </ul>
-            </PageLayout>
+            </section>
         </>
     );
 };

@@ -10,25 +10,23 @@ export const metadata: Metadata = {
 
 const Page = () => {
     return (
-        <PageLayout title="Test Form Page">
-            <section
+        <section
+            border="2"
+            rounded="md"
+            className="flex-start container prose mt-8 flex h-fit w-96 min-w-fit flex-col items-center gap-4 py-10 font-sans"
+        >
+            <header
                 border="2"
                 rounded="md"
-                className="flex-start container flex h-fit w-96 min-w-fit flex-col items-center gap-4 py-10"
+                hover="bg-gray-400/20"
+                className="flex w-full min-w-fit flex-col items-center justify-start p-2 text-center"
             >
-                <header
-                    border="2"
-                    rounded="md"
-                    hover="bg-gray-400/20"
-                    className="flex w-full min-w-fit flex-col items-center justify-start p-2 text-center"
-                >
-                    <h2 border="2" p="2" m="0" rounded="md">
-                        Save To File Test
-                    </h2>
-                </header>
-                <FSTestForm className="w-96 rounded-md border-2 p-2" />
-            </section>
-        </PageLayout>
+                <h2 border="2" p="2" m="0" rounded="md">
+                    Save To File Test
+                </h2>
+            </header>
+            <FSTestForm className="w-96 rounded-md border-2 p-2" />
+        </section>
     );
 };
 

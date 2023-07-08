@@ -1,10 +1,11 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useCallback } from 'react';
 
-type Inputs = {
+type FormData = {
     fileName: string;
-    fileContents: string;
+    contents: string;
 };
 
 type FormProps = {
@@ -16,18 +17,50 @@ const FSTestForm = ({ className }: FormProps) => {
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm<Inputs>();
+    } = useForm<FormData>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
-        console.log(data);
-        alert(JSON.stringify(data));
-    };
+    const onSubmit: SubmitHandler<FormData> = useCallback(
+        async (data: FormData) => {
+            console.log(data);
+            // alert(JSON.stringify(data));
 
-    console.log(watch('fileName')); // watch input value by passing the name of it
+            // convert data to json format before sending to server
+            const jsonData = JSON.stringify(data);
+
+            // API endpoint to send the data to
+            const endpoint = '/api/saveToFile';
+
+            // Form the request for sending data to the server.
+            const options = {
+                // The method is POST because we are sending data.
+                method: 'POST',
+                // Tell the server we're sending JSON.
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // Body of the request is the JSON data we created above.
+                body: jsonData,
+            };
+
+            const response = await fetch(endpoint, options);
+
+            if (response.status === 400) {
+                console.log('error 400:');
+
+                console.error('error writing to file');
+            } else if (response.status === 400) {
+                console.log('success');
+            }
+        },
+        []
+    );
+
+    // console.log(watch('fileName')); // watch input value by passing the name of it
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <form
+            method="post"
             onSubmit={handleSubmit(onSubmit)}
             className={cn(
                 'flex h-fit w-fit flex-col items-center justify-start gap-4',
@@ -46,12 +79,12 @@ const FSTestForm = ({ className }: FormProps) => {
             <textarea
                 placeholder="file contents"
                 className="w-full rounded-md border-2 px-2"
-                {...register('fileContents', { required: true })}
+                {...register('contents', { required: true })}
             />
 
             {/* errors will return when field validation fails  */}
             {errors.fileName && <span>This field is required</span>}
-            {errors.fileContents && <span>This field is required</span>}
+            {errors.contents && <span>This field is required</span>}
 
             <input
                 type="submit"
