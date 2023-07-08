@@ -51,6 +51,10 @@ export default defineConfig({
                     import('@iconify-json/iconoir/icons.json').then(
                         (icons) => icons.default
                     ),
+                ion: () =>
+                    import('@iconify-json/ion/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 wi: () =>
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
