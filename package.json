@@ -76,6 +76,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@iconify-json/eos-icons": "^1.1.6",
     "@iconify-json/ic": "^1.1.13",
+    "@iconify-json/iconoir": "^1.1.29",
     "@iconify-json/line-md": "^1.1.25",
     "@iconify-json/lucide": "^1.1.108",
     "@iconify-json/material-symbols": "^1.1.50",

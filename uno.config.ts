@@ -47,6 +47,10 @@ export default defineConfig({
                     import('@iconify-json/lucide/icons.json').then(
                         (icons) => icons.default
                     ),
+                iconoir: () =>
+                    import('@iconify-json/iconoir/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 wi: () =>
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
