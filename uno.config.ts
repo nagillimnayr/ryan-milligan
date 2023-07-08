@@ -1,4 +1,3 @@
-import { presetHeadlessUi } from 'unocss-preset-primitives';
 import { presetRadixUi } from 'unocss-preset-primitives';
 import {
     defineConfig,
@@ -8,9 +7,10 @@ import {
     presetUno,
     presetWebFonts,
     transformerDirectives,
-    transformerVariantGroup,
 } from 'unocss';
 import transformerAttributifyJsx from '@unocss/transformer-attributify-jsx-babel';
+
+import transformerVariantGroup from '@unocss/transformer-variant-group';
 
 export default defineConfig({
     shortcuts: [
@@ -37,12 +37,11 @@ export default defineConfig({
                 // ...
             },
         }),
-        presetHeadlessUi(),
         presetRadixUi(),
     ],
     transformers: [
         transformerDirectives(),
-        transformerVariantGroup(),
         transformerAttributifyJsx(),
+        transformerVariantGroup(),
     ],
 });
