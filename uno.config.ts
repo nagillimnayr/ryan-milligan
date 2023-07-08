@@ -39,8 +39,13 @@ export default defineConfig({
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
                     ),
-                'svg-spinners': () =>
+                spinners: () =>
                     import('@iconify-json/svg-spinners/icons.json').then(
+                        (icons) => icons.default
+                    ),
+
+                eos: () =>
+                    import('@iconify-json/eos-icons/icons.json').then(
                         (icons) => icons.default
                     ),
             },
