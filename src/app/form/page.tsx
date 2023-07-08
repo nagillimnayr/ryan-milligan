@@ -2,8 +2,13 @@ import FSTestForm from '@/components/forms/FSTestForm';
 import TestForm from '@/components/forms/TestForm';
 import TextInputForm from '@/components/forms/TextInputForm';
 import PageLayout from '@/components/layout/page-layout/PageLayout';
+import { Metadata } from 'next';
 
-const TestPage = () => {
+export const metadata: Metadata = {
+    title: 'Form Test',
+};
+
+const Page = () => {
     return (
         <PageLayout title="Test Form Page">
             <section
@@ -27,4 +32,4 @@ const TestPage = () => {
     );
 };
 
-export default TestPage;
+export default Page;
