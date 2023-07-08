@@ -45,7 +45,7 @@ const ThemeSwitch = (props: ThemeSwitchProps) => {
                     h="full"
                     border="2"
                     rounded="full"
-                    data-theme={theme}
+                    data-theme={darkMode ? 'dark' : 'light'}
                     className="i-eos:atom-electron i-line-md:moon-filled-to-sunny-filled-loop-transition data-[theme=dark]:i-line-md:sunny-filled-loop-to-moon-filled-loop-transition"
                 />
                 {/* {darkMode ? <MoonIcon size={24} /> : <SunIcon size={24} />} */}
