@@ -15,8 +15,9 @@ export default function SiteHeader() {
                         w="full"
                         h="full"
                         border="2"
+                        rounded="full"
                         className="i-eos:atom-electron"
-                    ></div>
+                    />
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
                     Site Header
