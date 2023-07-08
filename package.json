@@ -74,6 +74,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-typescript": "^7.22.5",
+    "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/eos-icons": "^1.1.6",
     "@iconify-json/ic": "^1.1.13",
     "@iconify-json/iconoir": "^1.1.29",
