@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import z from 'zod';
 
 const RequestSchema = z.object({
-    title: z.string(),
-    body: z.string(),
+    fileName: z.string(),
+    contents: z.string(),
 });
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         return;
     }
 
-    const { title, body } = reqData.data;
+    const { fileName, contents } = reqData.data;
     console.log('Parsed request:', body);
 
     res.status(200);
