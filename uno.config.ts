@@ -63,6 +63,10 @@ export default defineConfig({
                     import('@iconify-json/streamline/icons.json').then(
                         (icons) => icons.default
                     ),
+                arcticons: () =>
+                    import('@iconify-json/arcticons/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 wi: () =>
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
