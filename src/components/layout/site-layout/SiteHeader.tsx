@@ -15,7 +15,7 @@ export default function SiteHeader() {
                         w="full"
                         h="full"
                         border="2"
-                        className="i-line-md:loading-twotone-loop"
+                        className="i-eos:atom-electron"
                     ></div>
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
