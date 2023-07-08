@@ -1,4 +1,4 @@
-import '~/styles/globals.css';
+import '@/styles/globals.css';
 import { type Metadata } from 'next';
 import SiteLayout from '@/components/layout/site-layout/SiteLayout';
 import Providers from '@/components/providers/providers';
