@@ -43,6 +43,10 @@ export default defineConfig({
                     import('@iconify-json/tabler/icons.json').then(
                         (icons) => icons.default
                     ),
+                lucide: () =>
+                    import('@iconify-json/lucide/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 wi: () =>
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
