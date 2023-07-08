@@ -35,6 +35,10 @@ export default defineConfig({
                     import('@iconify-json/line-md/icons.json').then(
                         (icons) => icons.default
                     ),
+                material: () =>
+                    import('@iconify-json/material-symbols/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 wi: () =>
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
