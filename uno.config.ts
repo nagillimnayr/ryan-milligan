@@ -39,6 +39,10 @@ export default defineConfig({
                     import('@iconify-json/wi/icons.json').then(
                         (icons) => icons.default
                     ),
+                'svg-spinners': () =>
+                    import('@iconify-json/svg-spinners/icons.json').then(
+                        (icons) => icons.default
+                    ),
             },
         }),
         presetTypography(),
