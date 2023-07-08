@@ -39,6 +39,10 @@ export default defineConfig({
                     import('@iconify-json/material-symbols/icons.json').then(
                         (icons) => icons.default
                     ),
+                mdi: () =>
+                    import('@iconify-json/mdi/icons.json').then(
+                        (icons) => icons.default
+                    ),
                 tabler: () =>
                     import('@iconify-json/tabler/icons.json').then(
                         (icons) => icons.default
