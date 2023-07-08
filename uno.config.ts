@@ -30,6 +30,12 @@ export default defineConfig({
                 display: 'inline-block',
                 'vertical-align': 'middle',
             },
+            collections: {
+                'line-md': () =>
+                    import('@iconify-json/line-md/icons.json').then(
+                        (icons) => icons.default
+                    ),
+            },
         }),
         presetTypography(),
         presetWebFonts({

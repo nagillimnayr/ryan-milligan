@@ -10,7 +10,14 @@ export default function SiteHeader() {
                 href={'/'}
                 className="flex h-fit w-fit flex-row items-center justify-start gap-4"
             >
-                <div className="aspect-square w-10 border-2 border-border"></div>
+                <div className="aspect-square w-10 border-2 border-border">
+                    <div
+                        w="full"
+                        h="full"
+                        border="2"
+                        className="i-line-md:loading-twotone-loop"
+                    ></div>
+                </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
                     Site Header
                 </h2>

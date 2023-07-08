@@ -73,6 +73,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-typescript": "^7.22.5",
+    "@iconify-json/line-md": "^1.1.25",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.9",
     "@types/eslint": "^8.40.2",
