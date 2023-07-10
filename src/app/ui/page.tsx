@@ -1,4 +1,5 @@
 import { Button } from '@/components/gui/Button';
+import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -30,6 +31,19 @@ export default function Page() {
                     >
                         Button
                     </Button>
+                </section>
+                <section className="container flex h-96 w-96 flex-col items-center justify-center gap-4 p-4 text-lg">
+                    <div className="container flex flex-col items-center justify-center border p-4 text-center">
+                        <span
+                            className={cn(
+                                'inline-flex bg-clip-text text-3xl font-bold text-transparent',
+                                'bg-gradient-to-r from-pink-500 to-violet-500',
+                                'hover:animate-pulse'
+                            )}
+                        >
+                            Hello World
+                        </span>
+                    </div>
                 </section>
             </div>
         </section>
