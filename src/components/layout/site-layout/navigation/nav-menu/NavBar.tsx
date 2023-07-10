@@ -18,6 +18,7 @@ const otherLinks = [
     { href: '/misc', label: 'Misc' },
     { href: '/etc', label: 'Etc.' },
     { href: '/form', label: 'Form Test' },
+    { href: '/ui', label: 'UI Components' },
 ];
 
 const btnStyle = `rounded-md border-0 py-2 px-4 font-sans h-full hover:bg-foreground/10 ui-open:bg-foreground/10`;

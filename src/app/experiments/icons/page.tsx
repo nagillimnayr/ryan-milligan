@@ -182,19 +182,13 @@ const Page = () => {
             </Head>
 
             <section className="prose mx-auto mt-4 flex w-full flex-col items-center justify-start font-sans text-foreground prose-headings:text-foreground">
-                <h1 border="b-2">Icon Stuff</h1>
-                <div
-                    border="2"
-                    rounded="lg"
-                    className="flex w-full flex-wrap justify-start gap-4 p-4"
-                >
+                <h1 className="border-2">Icon Stuff</h1>
+                <div className="flex w-full flex-wrap justify-start gap-4 rounded-lg border-2 p-4 ">
                     {icons.map((icon, index) => {
                         return (
                             <div
                                 key={index}
-                                border="2"
-                                rounded="md"
-                                className="flex h-fit w-fit flex-col items-center justify-center p-6"
+                                className="flex h-fit w-fit flex-col items-center justify-center rounded-md border-2 p-6"
                             >
                                 <div className={cn('h-24 w-24', icon)} />
                                 <label>{icon}</label>

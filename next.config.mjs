@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import remarkToc from 'remark-toc';
 
-import unocss from '@unocss/webpack';
+// import unocss from '@unocss/webpack';
 
 const withMDX = mdx({
     extension: /\.mdx?$/,
@@ -24,11 +24,11 @@ const withMDX = mdx({
 const nextConfig = {
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     reactStrictMode: true,
-    webpack: (config) => {
-        config.plugins.push(unocss());
-        config.cache = false; // have to be false for hmr
-        return config;
-    },
+    // webpack: (config) => {
+    //     config.plugins.push(unocss());
+    //     config.cache = false; // have to be false for hmr
+    //     return config;
+    // },
 };
 
 export default withMDX(nextConfig);
