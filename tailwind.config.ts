@@ -1,4 +1,6 @@
 import { orbitron, atkinson_hyperlegible } from './src/lib/fonts';
+import { addDynamicIconSelectors } from '@iconify/tailwind';
+
 /** @type {import('tailwindcss').Config} */
 import { type Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
@@ -198,5 +200,6 @@ export default {
         require('@tailwindcss/container-queries'),
         require('tailwindcss-animate'),
         require('@headlessui/tailwindcss'),
+        addDynamicIconSelectors(), // iconify plugin
     ],
 } satisfies Config;
