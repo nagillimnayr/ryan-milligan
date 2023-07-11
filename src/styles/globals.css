@@ -93,6 +93,11 @@
 }
 
 @layer utilities {
+    /* ripple effect: to be applied to a span element */
+    .ripple {
+        @apply absolute scale-0 animate-ripple rounded-full bg-white/70;
+    }
+
     /* position the dropdown such that its center
     aligns with that of its parent */
     .dropdown-center {
@@ -113,6 +118,13 @@
         }
         100% {
             background-position: 0% 50%;
+        }
+    }
+
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
         }
     }
 }

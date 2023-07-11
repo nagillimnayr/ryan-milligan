@@ -25,10 +25,7 @@ export default function Page() {
                         Button
                     </Button>
 
-                    <Button
-                        variant={'secondary'}
-                        className="w-32 border-b-4 shadow"
-                    >
+                    <Button variant={'secondary'} className="w-32 shadow">
                         Button
                     </Button>
                 </section>
@@ -38,11 +35,24 @@ export default function Page() {
                             className={cn(
                                 'inline-flex bg-clip-text text-3xl font-bold text-transparent',
                                 'bg-gradient-to-r from-pink-500 to-violet-500',
-                                'hover:animate-pulse'
+                                'hover:animate-pulse',
+                                'select-none'
                             )}
                         >
                             Hello World
                         </span>
+                    </div>
+                </section>
+                <section className="container flex h-96 w-96 flex-col items-center justify-center gap-4 p-4 text-lg">
+                    <div className="container flex flex-col items-center justify-center border p-4 text-center">
+                        <Button
+                            className={cn(
+                                'w-32 rounded-lg bg-amethyst-500 py-2 shadow',
+                                'hover:bg-amethyst-700'
+                            )}
+                        >
+                            Button
+                        </Button>
                     </div>
                 </section>
             </div>

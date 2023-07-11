@@ -120,11 +120,18 @@ export default {
                         'background-position': '0% 50%',
                     },
                 },
+                ripple: {
+                    to: {
+                        transform: 'scale(4)',
+                        opacity: '0',
+                    },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'diagonal-bg': 'diagonal-bg 5s ease infinite',
+                ripple: 'ripple 600ms linear',
             },
 
             typography: () => ({
