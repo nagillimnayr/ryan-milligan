@@ -4,6 +4,7 @@ import { type Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
+    presets: [require('./rm-presets/colors')],
     darkMode: ['class'],
     content: [
         './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
