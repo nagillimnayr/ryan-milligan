@@ -11,13 +11,7 @@ export default function SiteHeader() {
                 className="flex h-fit w-fit flex-row items-center justify-start gap-4"
             >
                 <div className="aspect-square w-10 border-2 border-border">
-                    <div
-                        w="full"
-                        h="full"
-                        border="2"
-                        rounded="full"
-                        className="i-eos:atom-electron"
-                    />
+                    <div className="i-eos:atom-electron h-full w-full rounded-full border-2" />
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
                     Site Header

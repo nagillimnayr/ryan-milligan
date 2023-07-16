@@ -41,12 +41,8 @@ const ThemeSwitch = (props: ThemeSwitchProps) => {
                 onCheckedChange={handleChangeChecked}
             >
                 <div
-                    w="full"
-                    h="full"
-                    border="2"
-                    rounded="full"
                     data-theme={darkMode ? 'dark' : 'light'}
-                    className="i-eos:atom-electron i-line-md:moon-filled-to-sunny-filled-loop-transition data-[theme=dark]:i-line-md:sunny-filled-loop-to-moon-filled-loop-transition"
+                    className="i-eos:atom-electron i-line-md:moon-filled-to-sunny-filled-loop-transition data-[theme=dark]:i-line-md:sunny-filled-loop-to-moon-filled-loop-transition h-full w-full rounded-full border-2"
                 />
                 {/* {darkMode ? <MoonIcon size={24} /> : <SunIcon size={24} />} */}
             </IconSwitch>
