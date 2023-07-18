@@ -40,7 +40,7 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 lg:max-w-3xl ">
+            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 lg:max-w-3xl">
                 <div className="flex flex-col items-center justify-center gap-2">
                     <HeroHeader>Hello World!</HeroHeader>
                     <HeroDescription>

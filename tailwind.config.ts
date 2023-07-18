@@ -23,6 +23,9 @@ export default {
             },
         },
         extend: {
+            boxShadow: {
+                DEFAULT: '12px 12px 24px',
+            },
             fontFamily: {
                 sans: [
                     'var(--font-atkinson-hyperlegible)',
