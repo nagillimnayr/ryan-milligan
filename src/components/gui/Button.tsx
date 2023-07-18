@@ -1,48 +1,31 @@
-'use client';
-import { cn } from '@/lib/cn';
+import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { type VariantProps, cva } from 'class-variance-authority';
-import clsx from 'clsx';
-import React from 'react';
-import RippleEffect from './RippleEffect';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+import { cn } from '@/lib/cn';
+import RippleEffect from '../gui/RippleEffect';
 
 const buttonVariants = cva(
-    [
-        clsx(
-            'group',
-            'border border-b-4',
-            'm-0',
-            'aspect-[1.618]',
-            'font-semibold font-sans',
-            'rounded-md',
-            'flex flex-row items-center justify-center',
-            'transition-colors',
-            'select-none whitespace-nowrap',
-            'relative overflow-hidden' // for ripple effect
-        ),
-    ],
+    'relative inline-flex items-center justify-center m-0 rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring duration-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-110 overflow-hidden',
     {
         variants: {
             variant: {
-                default: [
-                    'bg-background text-foreground',
-
-                    'hover:bg-accent/80  hover:text-accent-foreground',
-                ],
-                primary: [
-                    'bg-primary text-primary-foreground',
-                    'hover:bg-primary-hover',
-                ],
-                secondary: [
-                    'bg-button-secondary text-button-secondary-foreground',
-                    'hover:bg-button-secondary-focus ',
-                ],
+                default:
+                    'bg-button-primary text-button-primary-foreground hover:bg-button-primary-focus/80 border border-border',
+                destructive:
+                    'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+                outline:
+                    'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+                secondary:
+                    'bg-secondary text-secondary-foreground hover:bg-secondary/80 border-2 border-border',
+                ghost: 'hover:bg-accent hover:text-accent-foreground',
+                link: 'text-primary underline-offset-4 hover:underline',
             },
             size: {
-                default: [clsx('min-w-24', 'px-4', 'py-2')],
-                small: [clsx('text-sm', 'px-2', 'py-1')],
-                medium: [clsx('text-base', 'px-4', 'py-2')],
-                large: [clsx('text-lg', 'px-6', 'py-3')],
+                default: 'h-10 px-4 py-2',
+                sm: 'h-9 rounded-md px-3',
+                lg: 'h-11 rounded-md px-8',
+                icon: 'h-10 w-10',
             },
         },
         defaultVariants: {
@@ -81,8 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {...props}
             >
                 {children}
-
-                {/* <RippleEffect /> */}
+                <RippleEffect />
             </Comp>
         );
     }
