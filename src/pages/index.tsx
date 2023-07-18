@@ -4,6 +4,8 @@ import HeroSection from '@/components/hero/HeroSection';
 import HeroDescription from '@/components/hero/HeroDescription';
 import HeroHeader from '@/components/hero/HeroHeader';
 import HeroCTA from '@/components/hero/HeroCTA';
+import { Button } from '@/components/ui/button';
+import RippleEffect from '@/components/gui/RippleEffect';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -47,11 +49,11 @@ export default function Home() {
                         magna aliqua.
                     </HeroDescription>
                 </div>
-                <div className="flex flex-row gap-8">
-                    <HeroCTA href={'/projects'}>Get started</HeroCTA>
-                    <HeroCTA variant={'secondary'} href={'/about'}>
-                        Learn more
-                    </HeroCTA>
+                <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
+                    <Button variant={'default'}>
+                        Hello World
+                        <RippleEffect />
+                    </Button>
                 </div>
             </section>
 

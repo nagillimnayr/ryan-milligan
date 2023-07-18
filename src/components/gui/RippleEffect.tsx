@@ -1,7 +1,7 @@
 'use client';
-import { useCallback, useRef } from 'react';
+import { PropsWithChildren, useCallback, useRef } from 'react';
 
-const RippleEffect = () => {
+const RippleEffect = ({ children }: PropsWithChildren) => {
     const rippleRef = useRef<HTMLSpanElement>(null!);
     const handleClick = useCallback(
         (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -55,16 +55,17 @@ const RippleEffect = () => {
     );
     return (
         <>
-            {/** --pos-x and --pos-y will be inherited the span element */}
+            {/** --pos-x and --pos-y will be inherited by the inner span element */}
             <div
                 onClick={handleClick}
-                className="absolute left-0 top-0 h-full w-full overflow-hidden border-transparent bg-transparent [--pos-x:0%] [--pos-y:0%]"
+                className="absolute left-0 top-0 m-0 inline-flex h-full w-full items-center justify-center overflow-hidden border-transparent bg-transparent p-0 [--pos-x:0%] [--pos-y:0%]"
             >
                 {/** --pos-x and --pos-y can then be used to position the top-left of the element relative to its parent. These CSS variables will be set to the mouse position when the button is clicked so that the center of the ripple appears where the user clicks. */}
                 <span
                     ref={rippleRef}
-                    className="absolute left-[var(--pos-x)] top-[var(--pos-y)] aspect-square h-12 w-12 scale-0 rounded-full bg-white opacity-0"
+                    className="absolute left-[var(--pos-x)] top-[var(--pos-y)] aspect-square h-8 w-8 scale-0 rounded-full bg-white p-0 opacity-0"
                 />
+                {/* {children} */}
             </div>
         </>
     );
