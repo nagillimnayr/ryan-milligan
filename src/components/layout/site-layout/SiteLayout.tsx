@@ -1,7 +1,7 @@
 'use client';
 import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import {
     roboto,
     roboto_condensed,

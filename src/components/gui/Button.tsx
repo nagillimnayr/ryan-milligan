@@ -1,18 +1,25 @@
-'client component';
-import { cn } from '@/lib/utils';
+'use client';
+import { cn } from '@/lib/cn';
 import { Slot } from '@radix-ui/react-slot';
 import { type VariantProps, cva } from 'class-variance-authority';
-import React, { useCallback } from 'react';
+import clsx from 'clsx';
+import React from 'react';
+import RippleEffect from './RippleEffect';
 
 const buttonVariants = cva(
     [
-        'border border-b-8',
-        'font-semibold font-sans',
-        'rounded-md',
-        'flex flex-row items-center justify-center',
-        'transition-colors',
-        'select-none',
-        'relative overflow-hidden', // for ripple effect
+        clsx(
+            'group',
+            'border border-b-4',
+            'm-0',
+            'aspect-[1.618]',
+            'font-semibold font-sans',
+            'rounded-md',
+            'flex flex-row items-center justify-center',
+            'transition-colors',
+            'select-none whitespace-nowrap',
+            'relative overflow-hidden' // for ripple effect
+        ),
     ],
     {
         variants: {
@@ -23,8 +30,8 @@ const buttonVariants = cva(
                     'hover:bg-accent/80  hover:text-accent-foreground',
                 ],
                 primary: [
-                    'bg-button-primary text-button-primary-foreground',
-                    'hover:bg-button-primary-focus/50',
+                    'bg-primary text-primary-foreground',
+                    'hover:bg-primary-hover',
                 ],
                 secondary: [
                     'bg-button-secondary text-button-secondary-foreground',
@@ -32,10 +39,10 @@ const buttonVariants = cva(
                 ],
             },
             size: {
-                default: ['h-12', 'px-4', 'py-2'],
-                small: ['text-sm', 'px-2', 'py-1'],
-                medium: ['text-base', 'px-4', 'py-2'],
-                large: ['text-lg', 'px-6', 'py-3'],
+                default: [clsx('min-w-24', 'px-4', 'py-2')],
+                small: [clsx('text-sm', 'px-2', 'py-1')],
+                medium: [clsx('text-base', 'px-4', 'py-2')],
+                large: [clsx('text-lg', 'px-6', 'py-3')],
             },
         },
         defaultVariants: {
@@ -66,34 +73,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ) => {
         const Comp = asChild ? Slot : 'button';
 
-        const handleClick = useCallback(
-            (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                const button = event.currentTarget;
-                const diameter = Math.max(
-                    button.clientWidth,
-                    button.clientHeight
-                );
-                const radius = diameter / 2;
-                const circle = React.createElement('span', { className: '' });
-
-                // if an onClick event handler was passed to us, call it and pass the mouse event object to it
-                if (onClick) onClick(event);
-            },
-            [onClick]
-        );
         return (
             <Comp
                 className={cn(buttonVariants({ variant, size, className }))}
                 ref={ref}
-                onClick={handleClick}
+                onClick={onClick}
                 {...props}
             >
                 {children}
-                <span className="absolute aspect-square w-full scale-0 rounded-full bg-white/100 transition-all hover:animate-ripple active:animate-ripple" />
+
+                <RippleEffect />
             </Comp>
         );
     }
 );
 Button.displayName = 'Button';
 
-export { Button, buttonVariants };
+export { buttonVariants, Button };

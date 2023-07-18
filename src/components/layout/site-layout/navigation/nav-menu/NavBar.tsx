@@ -1,7 +1,7 @@
 import { Menu } from '@headlessui/react';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import NavDropdownMenu from './NavDropdownMenu';
 import NavMenuLink from './NavMenuLink';
 import { ClassNameProp } from '@/components/props/Props';

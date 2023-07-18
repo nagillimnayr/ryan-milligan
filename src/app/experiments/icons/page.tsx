@@ -3,7 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType, type NextPage } from 'next';
 import { useMemo } from 'react';
 import { PageData, getAllPagesFromDir } from '@/lib/mdx/getPageData';
 import PageListItem from '@/components/page-list/PageListItem';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 
 const icons = [
     'i-tabler:3d-cube-sphere',

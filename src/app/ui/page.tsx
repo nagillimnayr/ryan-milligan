@@ -1,5 +1,5 @@
 import { Button } from '@/components/gui/Button';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

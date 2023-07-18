@@ -10,8 +10,8 @@ export default function SiteHeader() {
                 href={'/'}
                 className="flex h-fit w-fit flex-row items-center justify-start gap-4"
             >
-                <div className="aspect-square w-10 border-2 border-border">
-                    <div className="i-eos:atom-electron h-full w-full rounded-full border-2" />
+                <div className="inline-flex aspect-square w-10 items-center justify-center border-2 border-border">
+                    <div className="icon-[eos-icons--atom-electron]  h-full w-full rounded-full border-2" />
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
                     Site Header

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import NavButton from './NavButton';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 
 const MainNav = () => {
     return (

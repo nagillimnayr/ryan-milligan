@@ -6,7 +6,7 @@ import {
     roboto_serif,
     roboto_slab,
 } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import PageHeader from './PageHeader';
 import Head from 'next/head';
 

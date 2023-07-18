@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Inputs = {

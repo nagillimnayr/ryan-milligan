@@ -1,5 +1,5 @@
 import { IconSwitch } from '@/components/ui/switch-icon';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useCallback, useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
@@ -42,9 +42,8 @@ const ThemeSwitch = (props: ThemeSwitchProps) => {
             >
                 <div
                     data-theme={darkMode ? 'dark' : 'light'}
-                    className="i-eos:atom-electron i-line-md:moon-filled-to-sunny-filled-loop-transition data-[theme=dark]:i-line-md:sunny-filled-loop-to-moon-filled-loop-transition h-full w-full rounded-full border-2"
+                    className="icon-[line-md--moon-filled-to-sunny-filled-loop-transition] h-full w-full rounded-full border-2 data-[theme=dark]:icon-[line-md--sunny-filled-loop-to-moon-filled-loop-transition]"
                 />
-                {/* {darkMode ? <MoonIcon size={24} /> : <SunIcon size={24} />} */}
             </IconSwitch>
         </div>
     );
