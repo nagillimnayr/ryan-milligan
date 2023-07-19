@@ -40,14 +40,16 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <section className="container flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 lg:max-w-3xl">
+            <section className="container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl">
                 <div className="flex flex-col items-center justify-center gap-2">
-                    <HeroHeader>Hello World!</HeroHeader>
-                    <HeroDescription>
+                    <h1 className="flex flex-row text-center font-display">
+                        Hello World!
+                    </h1>
+                    <p className="overflow-hidden text-ellipsis text-center md:w-96 lg:w-96">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua.
-                    </HeroDescription>
+                    </p>
                 </div>
                 <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
                     <Button variant={'default'}>
