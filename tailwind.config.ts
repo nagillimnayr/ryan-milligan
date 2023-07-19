@@ -211,5 +211,8 @@ export default {
         require('tailwindcss-animate'),
         require('@headlessui/tailwindcss'),
         addDynamicIconSelectors(), // iconify plugin
+
+        require('@savvywombat/tailwindcss-grid-areas'),
+        require('@savvywombat/tailwindcss-grid-named-lines'),
     ],
 } satisfies Config;
