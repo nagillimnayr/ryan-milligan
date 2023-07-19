@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
-import MainNav from './navigation/MainNav';
 import Navbar from './navigation/nav-menu/NavBar';
 
 export default function SiteHeader() {
@@ -10,11 +9,13 @@ export default function SiteHeader() {
                 href={'/'}
                 className="flex h-fit w-fit flex-row items-center justify-start gap-4"
             >
-                <div className="inline-flex aspect-square w-10 items-center justify-center border-2 border-border">
+                <div className="inline-flex aspect-square w-10 items-center justify-center">
                     <div className="icon-[eos-icons--atom-electron]  h-full w-full rounded-full border-2" />
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
-                    Site Header
+                    <span className="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text transition-colors hover:text-transparent">
+                        Ryan Milligan
+                    </span>
                 </h2>
             </Link>
 
