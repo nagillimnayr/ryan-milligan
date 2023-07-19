@@ -1,29 +1,30 @@
 'use client';
 import { PropsWithChildren, useCallback, useRef } from 'react';
 
-const RippleEffect = ({ children }: PropsWithChildren) => {
+const RippleEffect = () => {
     const rippleRef = useRef<HTMLSpanElement>(null!);
     const handleClick = useCallback(
         (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
             const container = event.currentTarget;
-            // get mouse position relative to element
-            const rect = container.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const diameter = Math.max(rect.width, rect.height);
-
-            const ripple = rippleRef.current;
-            // set the css variables for center of ripple
-            ripple.style.setProperty('--pos-x', `${x}px`);
-            ripple.style.setProperty('--pos-y', `${y}px`);
-
-            // set size of ripple
-            ripple.style.setProperty('width', `${diameter}px`);
-            ripple.style.setProperty('height', `${diameter}px`);
-
             const parent = container.parentElement;
+            const ripple = rippleRef.current;
+
+            // get mouse position relative to parent element
             if (parent) {
+                const rect = parent.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                const diameter = Math.max(rect.width, rect.height);
+
+                // set the css variables for center of ripple
+                ripple.style.setProperty('--pos-x', `${x}px`);
+                ripple.style.setProperty('--pos-y', `${y}px`);
+
+                // set size of ripple
+                ripple.style.setProperty('width', `${diameter}px`);
+                ripple.style.setProperty('height', `${diameter}px`);
+
                 // get the text color of the parent element
                 const computedStyles = window.getComputedStyle(parent);
                 const foregroundColor = computedStyles.color;
@@ -45,7 +46,7 @@ const RippleEffect = ({ children }: PropsWithChildren) => {
                 },
             ];
             const timing = {
-                duration: 800,
+                duration: 600,
                 iterations: 1,
             };
 
