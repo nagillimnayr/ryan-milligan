@@ -57,7 +57,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
         <div
             className={cn(
                 ...fontVariables,
-                'absolute left-0 top-0 m-0 flex min-h-full w-screen flex-col items-stretch p-0'
+                'absolute left-0 top-0 m-0 flex h-full w-full flex-col items-stretch p-0'
             )}
         >
             <SiteHeader />
