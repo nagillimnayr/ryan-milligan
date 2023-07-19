@@ -54,7 +54,12 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     }, [setTheme, systemTheme]);
 
     return (
-        <div className={cn(...fontVariables)}>
+        <div
+            className={cn(
+                ...fontVariables,
+                'absolute left-0 top-0 m-0 flex min-h-full w-screen flex-col items-stretch p-0'
+            )}
+        >
             <SiteHeader />
             {children}
             <SiteFooter />
