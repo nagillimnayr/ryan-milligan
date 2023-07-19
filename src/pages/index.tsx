@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import HeroDescription from '@/components/hero/HeroDescription';
-import HeroHeader from '@/components/hero/HeroHeader';
 import { Button } from '@/components/gui/Button';
 import RippleEffect from '@/components/gui/RippleEffect';
 import { Card } from '@/components/card/Card';
