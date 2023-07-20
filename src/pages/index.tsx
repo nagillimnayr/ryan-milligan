@@ -43,9 +43,7 @@ export default function Home() {
           <h1 className="flex flex-row text-center font-display">
             Hello! I&apos;m Ryan
           </h1>
-          <p className="overflow-hidden text-ellipsis text-center md:w-96 lg:w-96">
-            {hello.data ? hello.data.greeting : 'Loading...'}
-            <br />
+          <p className="overflow-hidden text-ellipsis text-center text-lg font-semibold md:w-96 lg:w-[26rem]">
             I&apos;m a computer science student, who&apos;s passionate about
             programming, computer graphics, physics, and making cool stuff.
           </p>
