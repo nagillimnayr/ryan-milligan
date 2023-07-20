@@ -79,6 +79,7 @@
   "devDependencies": {
     "@iconify-json/arcticons": "^1.1.61",
     "@iconify-json/carbon": "^1.1.18",
+    "@iconify-json/devicon": "^1.1.13",
     "@iconify-json/eos-icons": "^1.1.6",
     "@iconify-json/ic": "^1.1.13",
     "@iconify-json/iconoir": "^1.1.29",
