@@ -10,7 +10,7 @@ export default function SiteHeader() {
                 className="flex h-fit w-fit flex-row items-center justify-start gap-4"
             >
                 <div className="inline-flex aspect-square w-10 items-center justify-center">
-                    <div className="icon-[eos-icons--atom-electron]  h-full w-full rounded-full border-2" />
+                    <div className="icon-[eos-icons--atom-electron]  h-full w-full rounded-full border-2 transition-colors hover:text-indigo-500" />
                 </div>
                 <h2 className="font-orbitron text-3xl font-extrabold">
                     <span className="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text transition-colors hover:text-transparent">
