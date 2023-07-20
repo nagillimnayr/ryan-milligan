@@ -4,10 +4,12 @@ import { Button } from '@/components/gui/Button';
 import RippleEffect from '@/components/gui/RippleEffect';
 import { Card } from '@/components/card/Card';
 import { ContactLinks } from '@/components/ContactLinks';
+import { trpc } from '@/lib/trpc/trpc';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const hello = trpc.hello.useQuery({ text: 'client' });
   return (
     <main
       className={`flex h-full flex-col items-center justify-start gap-8 px-24 pb-24 pt-10 font-sans`}
@@ -39,11 +41,13 @@ export default function Home() {
       <section className="container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl">
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="flex flex-row text-center font-display">
-            Hello World!
+            Hello! I&apos;m Ryan
           </h1>
           <p className="overflow-hidden text-ellipsis text-center md:w-96 lg:w-96">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {hello.data ? hello.data.greeting : 'Loading...'}
+            <br />
+            I&apos;m a computer science student, who&apos;s passionate about
+            programming, computer graphics, physics, and making cool stuff.
           </p>
         </div>
         <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
