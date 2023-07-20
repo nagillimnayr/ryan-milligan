@@ -1,8 +1,18 @@
+import { cn } from '@/lib/cn';
 import Link from 'next/link';
+import { type ClassNameValue } from 'tailwind-merge';
 
-const ContactLinks = () => {
+type Props = {
+  className?: ClassNameValue;
+};
+const ContactLinks = ({ className }: Props) => {
   return (
-    <div className="grid h-16 w-36 grid-flow-col grid-cols-2 place-items-center rounded-lg">
+    <div
+      className={cn(
+        'grid h-16 w-36 grid-flow-col grid-cols-2 place-items-center rounded-lg',
+        className
+      )}
+    >
       {/** Github */}
       <Link
         href="https://github.com/nagillimnayr"

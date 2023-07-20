@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import Navbar from './navigation/nav-menu/NavBar';
+import { ContactLinks } from '@/components/ContactLinks';
 
 export default function SiteHeader() {
   return (
@@ -21,6 +22,9 @@ export default function SiteHeader() {
 
       {/* <MainNav /> */}
       <Navbar />
+
+      <ContactLinks className="ml-auto h-8 w-20" />
+
       <ThemeSwitch className="ml-auto mr-4" />
     </header>
   );

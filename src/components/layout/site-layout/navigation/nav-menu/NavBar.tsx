@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn';
 import NavDropdownMenu from './NavDropdownMenu';
 import NavMenuLink from './NavMenuLink';
 import { ClassNameProp } from '@/components/props/Props';
+import { ContactLinks } from '@/components/ContactLinks';
 
 const mainLinks = [
   { href: '/projects', label: 'Projects' },
