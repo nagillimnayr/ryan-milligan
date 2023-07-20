@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const ContactLinks = () => {
   return (
-    <div className="grid h-20 w-48 grid-flow-col grid-cols-2 place-items-center rounded-lg border">
+    <div className="grid h-16 w-36 grid-flow-col grid-cols-2 place-items-center rounded-lg">
       {/** Github */}
       <Link
         href="https://github.com/nagillimnayr"
