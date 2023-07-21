@@ -81,8 +81,11 @@ const skills = [
 ];
 export default function Page() {
   return (
-    <section className="container grid h-full w-full place-items-center border">
-      <div className="grid h-96 w-[48rem] grid-cols-7 grid-rows-3 gap-4 rounded-lg border bg-muted p-4">
+    <section className="container prose flex h-full w-full  flex-col items-center justify-start font-sans prose-headings:my-0">
+      <header className="my-8">
+        <h2 className="text-4xl">My Skills</h2>
+      </header>
+      <div className="grid h-96 w-[48rem] grid-cols-7 grid-rows-3 gap-4 rounded-lg border bg-slate-600 p-4">
         {skills.map((skill) => {
           return (
             <span
