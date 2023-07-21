@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto mb-32 flex  w-[768px] justify-between gap-8  border-2 border-transparent text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <div className="container mx-auto mb-32 flex w-fit min-w-fit justify-between gap-8  border-2 border-transparent text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <Card href={'/projects'} heading="Projects" description="" />
 
         <Card href={'/experiments'} heading="Experiments" description="" />
