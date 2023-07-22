@@ -35,6 +35,10 @@ const skills = [
     icon: 'icon-[devicon--cplusplus]',
   },
   {
+    name: 'C#',
+    icon: 'icon-[devicon--csharp]',
+  },
+  {
     name: 'Python',
     icon: 'icon-[devicon--python]',
   },
