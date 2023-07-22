@@ -5,6 +5,7 @@ import RippleEffect from '@/components/gui/RippleEffect';
 import { Card } from '@/components/card/Card';
 import { ContactLinks } from '@/components/ContactLinks';
 import { trpc } from '@/lib/trpc/trpc';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +27,7 @@ export default function Home() {
         </div>
         <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
           <Button variant={'default'}>
-            Hello World
+            Hello World!
             <RippleEffect />
           </Button>
         </div>

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/cn';
-import { ClassNameValue } from 'tailwind-merge';
+import { type ClassNameValue } from 'tailwind-merge';
 
 const skills = [
   {
@@ -89,7 +89,7 @@ export default function Page() {
       <header className="my-8">
         <h2 className="text-4xl">My Skills</h2>
       </header>
-      <div className="grid h-96 w-[48rem] grid-cols-7 grid-rows-3 gap-4 rounded-lg border bg-slate-600 p-4">
+      <div className="grid h-96 w-[48rem] grid-cols-7 grid-rows-3 gap-4 rounded-lg border bg-gray-200 p-4 dark:bg-slate-600">
         {skills.map((skill) => {
           return (
             <span
