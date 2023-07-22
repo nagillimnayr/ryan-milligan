@@ -7,7 +7,6 @@ const Error404Page = () => {
     <>
       <Head>
         <title>404 Not Found</title>
-        <link rel="icon" type="image/favicon" href="/favicon.ico" />
       </Head>
       <section className="flex h-full items-center p-16 font-sans dark:bg-gray-900 dark:text-gray-100">
         <div className="container mx-auto my-8 flex flex-col items-center justify-center px-5">
@@ -18,10 +17,7 @@ const Error404Page = () => {
             <p className="text-2xl font-semibold md:text-3xl">
               {"Sorry, we couldn't find this page."}
             </p>
-            <p className="mb-8 mt-4 dark:text-gray-400">
-              But dont worry, you can find plenty of other things on our
-              homepage.
-            </p>
+
             <Button
               asChild
               className="rounded px-8 py-3 font-semibold dark:bg-violet-400 dark:text-gray-900"
