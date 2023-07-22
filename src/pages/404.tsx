@@ -18,11 +18,12 @@ const Error404Page = () => {
               {"Sorry, we couldn't find this page."}
             </p>
 
-            <Button
-              asChild
-              className="rounded px-8 py-3 font-semibold dark:bg-violet-400 dark:text-gray-900"
-            >
-              <Link rel="noopener noreferrer" href="/">
+            <Button className="my-2 inline-flex items-center justify-center rounded px-4 py-3 font-semibold dark:bg-violet-400 dark:text-gray-900">
+              <Link
+                rel="noopener noreferrer"
+                href="/"
+                className="h-full w-full text-center"
+              >
                 Back to homepage
               </Link>
             </Button>
