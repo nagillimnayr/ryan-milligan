@@ -1,11 +1,6 @@
-import { Menu } from '@headlessui/react';
-import { Fragment } from 'react';
-import Link from 'next/link';
 import { cn } from '@/lib/cn';
-import NavDropdownMenu from './NavDropdownMenu';
 import NavMenuLink from './NavMenuLink';
-import { ClassNameProp } from '@/components/props/Props';
-import { ContactLinks } from '@/components/ContactLinks';
+import { type ClassNameValue } from 'tailwind-merge';
 
 const mainLinks = [
   { href: '/projects', label: 'Projects' },
@@ -21,7 +16,10 @@ const mainLinks = [
 
 const btnStyle = `rounded-md transition-colors duration-300 border-0 py-2 px-4 font-sans h-full hover:bg-foreground/10 ui-open:bg-foreground/10`;
 
-const Navbar = ({ className }: ClassNameProp) => {
+type Props = {
+  className?: ClassNameValue;
+};
+const Navbar = ({ className }: Props) => {
   return (
     <nav
       className={cn(
