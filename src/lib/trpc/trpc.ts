@@ -13,7 +13,9 @@ function getBaseUrl() {
 
   if (process.env.RENDER_INTERNAL_HOSTNAME)
     // reference for render.com
-    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}`;
+    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${
+      process.env.PORT as string
+    }`;
 
   // assume localhost
   return `http://localhost:${process.env.PORT ?? 3000}`;
@@ -21,6 +23,7 @@ function getBaseUrl() {
 
 export const trpc = createTRPCNext<AppRouter>({
   config(opts) {
+    opts;
     return {
       links: [
         httpBatchLink({
@@ -31,11 +34,11 @@ export const trpc = createTRPCNext<AppRouter>({
           url: `${getBaseUrl()}/api/trpc`,
 
           // You can pass any HTTP headers you wish here
-          async headers() {
-            return {
-              // authorization: getAuthCookie(),
-            };
-          },
+          // async headers() {
+          //   return {
+          //     // authorization: getAuthCookie(),
+          //   };
+          // },
         }),
       ],
     };
