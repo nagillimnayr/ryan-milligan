@@ -22,7 +22,19 @@ const ProjectsPage = () => {
               href={'https://astronomia-nova.vercel.app'}
               className="text-sm hover:text-blue-500"
             >
-              astronomia-nova.vercel.app
+              https://astronomia-nova.vercel.app
+            </a>
+          </section>
+          <section className="flex h-60 w-48 flex-col items-center justify-start rounded-md border-2 p-2 transition-all hover:scale-110">
+            <header>
+              <h3 className="text-lg font-medium ">Foot-pedal Solitaire</h3>
+            </header>
+            <div className="aspect-square w-full rounded-md border"></div>
+            <a
+              href={'https://github.com/nagillimnayr/solitaire-footpedal'}
+              className="text-sm hover:text-blue-500"
+            >
+              https://github.com/nagillimnayr/solitaire-footpedal
             </a>
           </section>
         </div>
