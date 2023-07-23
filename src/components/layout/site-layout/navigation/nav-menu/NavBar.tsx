@@ -14,7 +14,7 @@ const mainLinks = [
 //   { href: '/etc', label: 'Etc.' },
 // ];
 
-const btnStyle = `rounded-md transition-colors duration-300 border-0 py-2 px-4 font-sans h-full hover:bg-foreground/10 ui-open:bg-foreground/10`;
+const btnStyle = `rounded-md transition-all duration-300 border-0 py-2 px-4 font-sans font-semibold h-full hover:bg-foreground/10 ui-open:bg-foreground/10`;
 
 type Props = {
   className?: ClassNameValue;

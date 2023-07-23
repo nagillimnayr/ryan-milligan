@@ -6,12 +6,12 @@ import { cn } from '@/lib/cn';
 import RippleEffect from '../gui/RippleEffect';
 
 const buttonVariants = cva(
-  'relative inline-flex items-center justify-center m-0 rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring duration-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-110 overflow-hidden',
+  'relative inline-flex items-center justify-center m-0 rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring duration-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 overflow-hidden',
   {
     variants: {
       variant: {
         default:
-          'bg-button-primary text-button-primary-foreground hover:bg-button-primary-focus border-border',
+          'bg-button-primary text-button-primary-foreground hover:bg-button-primary-focus border-border  hover:scale-110',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive',
         outline:
