@@ -15,11 +15,12 @@ const ProjectsPage = () => {
         </header>
         <div className="grid w-full grid-cols-2 grid-rows-1 place-items-center  p-6">
           <section className="flex h-80 w-60 flex-col items-center justify-start rounded-md border-2 bg-gray-200 p-2 transition-all duration-500 hover:scale-110 dark:bg-slate-700">
-            <header>
+            <header className=" mb-2 inline-flex items-center justify-center">
               <h3 className="text-lg font-medium ">Astronomia Nova</h3>
             </header>
             <div className="relative aspect-square w-full overflow-hidden rounded-md border">
               <Image
+                className="m-0"
                 src={'/images/astronomia-nova.png'}
                 alt="Error loading image..."
                 fill
@@ -40,11 +41,12 @@ const ProjectsPage = () => {
             </a>
           </section>
           <section className="flex h-80 w-60 flex-col items-center justify-start rounded-md border-2 bg-gray-200 p-2 transition-all duration-500 hover:scale-110 dark:bg-slate-700">
-            <header>
+            <header className="mb-2 inline-flex items-center justify-center">
               <h3 className="text-lg font-medium ">Foot-pedal Solitaire</h3>
             </header>
             <div className="relative aspect-square w-full overflow-hidden rounded-md border">
               <Image
+                className="m-0"
                 src={'/images/solitaire.png'}
                 alt="Error loading image..."
                 fill
