@@ -18,7 +18,7 @@ export default function Home() {
       <section className="container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl">
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="flex flex-row text-center font-display">
-            Hello! I&apos;m Ryan
+            Hello, I&apos;m Ryan
           </h1>
           <p className="overflow-hidden text-ellipsis text-center font-sans text-lg font-medium md:w-96 lg:w-[26rem]">
             I&apos;m a computer science student who&apos;s passionate about
@@ -26,9 +26,16 @@ export default function Home() {
           </p>
         </div>
         <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
-          <Button variant={'default'}>
-            Hello World!
-            <RippleEffect />
+          <Button
+            variant={'default'}
+            className="inline-flex items-center justify-center"
+            asChild
+          >
+            <Link href={'/projects'} className="no-underline">
+              My Projects
+            </Link>
+
+            {/* <RippleEffect /> */}
           </Button>
         </div>
       </section>

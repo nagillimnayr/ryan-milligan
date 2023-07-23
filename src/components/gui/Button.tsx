@@ -56,7 +56,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {children}
-        <RippleEffect />
+        {/* <RippleEffect /> */}
       </Comp>
     );
   }

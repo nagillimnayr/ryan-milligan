@@ -1,4 +1,5 @@
 import { Button } from '@/components/gui/Button';
+import RippleEffect from '@/components/gui/RippleEffect';
 import Head from 'next/head';
 
 const ExperimentsPage = () => {
@@ -16,7 +17,10 @@ const ExperimentsPage = () => {
             <header className="w-full p-2">
               <h3 className="my-0">Ripple Animation</h3>
             </header>
-            <Button>Button!</Button>
+            <Button>
+              Button!
+              <RippleEffect />
+            </Button>
           </section>
           <div className="my-4 h-0 w-full border-y" />
 
