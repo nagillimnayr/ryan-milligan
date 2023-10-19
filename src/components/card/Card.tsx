@@ -19,11 +19,9 @@ const Card = ({ href, heading, description, children, className }: Props) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <h2 className={`mb-3 w-full text-center text-2xl font-semibold`}>
-        {heading}
-      </h2>
-      <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>{description}</p>
-      {children}
+      <h2 className={`w-full text-center text-2xl font-semibold`}>{heading}</h2>
+      {/* <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>{description}</p>
+      {children} */}
     </Link>
   );
 };
