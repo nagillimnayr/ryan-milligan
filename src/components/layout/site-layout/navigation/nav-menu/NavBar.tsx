@@ -4,7 +4,7 @@ import { type ClassNameValue } from 'tailwind-merge';
 
 const mainLinks = [
   { href: '/projects', label: 'Projects' },
-  { href: '/experiments', label: 'Experiments' },
+  // { href: '/experiments', label: 'Experiments' },
   { href: '/skills', label: 'Skills' },
 ];
 
