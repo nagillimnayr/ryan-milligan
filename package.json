@@ -44,6 +44,7 @@
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
     "@types/fs-extra": "^11.0.1",
+    "@types/three": "^0.158.0",
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
