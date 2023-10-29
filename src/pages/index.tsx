@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { Button } from '@/components/dom/gui/Button';
-import RippleEffect from '@/components/dom/gui/RippleEffect';
 import { Card } from '@/components/dom/card/Card';
 import { ContactLinks } from '@/components/dom/ContactLinks';
 import { trpc } from '@/helpers/trpc/trpc';
 import Link from 'next/link';
+import { Common, View } from '@/components/canvas/scene/View';
+import { Name3D } from '@/components/canvas/Name3D';
+import { Sphere } from '@react-three/drei';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const hello = trpc.hello.useQuery({ text: 'client' });
@@ -15,8 +17,12 @@ export default function Home() {
     <main
       className={`grid h-full w-full grid-cols-1 place-items-center items-center justify-start gap-8 px-24 pb-24 pt-16 font-sans`}
     >
+      <View className='w-full h-96 border-red-500 border-2 '>
+        <Name3D/>
+        <Common cameraPosition={[0,0,5]}/>
+      </View>
       <section className="container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl">
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 w-full h-44">
           <h1 className="flex flex-row text-center font-display">
             Hello, I&apos;m Ryan
           </h1>
@@ -24,7 +30,9 @@ export default function Home() {
             I&apos;m a computer science student who&apos;s passionate about
             programming, computer graphics, physics, and making cool stuff.
           </p>
+          
         </div>
+       
         <div className="flex h-fit w-full flex-row items-center justify-center gap-8">
           <Button
             variant={'default'}
