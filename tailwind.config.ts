@@ -1,4 +1,4 @@
-import { orbitron, atkinson_hyperlegible } from './src/lib/fonts';
+// import { orbitron, atkinson_hyperlegible } from './src/helpers/fonts';
 import { addDynamicIconSelectors } from '@iconify/tailwind';
 
 /** @type {import('tailwindcss').Config} */
