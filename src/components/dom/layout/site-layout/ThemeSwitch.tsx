@@ -1,4 +1,4 @@
-import { IconSwitch } from '@/components/ui/switch-icon';
+import { IconSwitch } from '@/components/dom/ui/switch-icon';
 import { cn } from '@/helpers/cn';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useCallback, useState, useEffect } from 'react';

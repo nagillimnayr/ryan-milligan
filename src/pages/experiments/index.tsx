@@ -1,5 +1,5 @@
-import { Button } from '@/components/gui/Button';
-import RippleEffect from '@/components/gui/RippleEffect';
+import { Button } from '@/components/dom/gui/Button';
+import RippleEffect from '@/components/dom/gui/RippleEffect';
 import Head from 'next/head';
 
 const ExperimentsPage = () => {

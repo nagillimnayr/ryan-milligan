@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { Button } from '@/components/gui/Button';
-import RippleEffect from '@/components/gui/RippleEffect';
-import { Card } from '@/components/card/Card';
-import { ContactLinks } from '@/components/ContactLinks';
+import { Button } from '@/components/dom/gui/Button';
+import RippleEffect from '@/components/dom/gui/RippleEffect';
+import { Card } from '@/components/dom/card/Card';
+import { ContactLinks } from '@/components/dom/ContactLinks';
 import { trpc } from '@/helpers/trpc/trpc';
 import Link from 'next/link';
 

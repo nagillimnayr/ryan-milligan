@@ -1,5 +1,5 @@
-import SiteLayout from '@/components/layout/site-layout/SiteLayout';
-import Providers from '@/components/providers/providers';
+import SiteLayout from '@/components/dom/layout/site-layout/SiteLayout';
+import Providers from '@/components/dom/providers/providers';
 import { trpc } from '@/helpers/trpc/trpc';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';

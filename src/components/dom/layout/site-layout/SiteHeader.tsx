@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
-import Navbar from './navigation/nav-menu/NavBar';
-import { ContactLinks } from '@/components/ContactLinks';
+import Navbar from '@/components/dom/layout/site-layout/navigation/NavBar';
+import { ContactLinks } from '@/components/dom/ContactLinks';
 
 export default function SiteHeader() {
   return (

@@ -1,4 +1,4 @@
-import { Button } from '@/components/gui/Button';
+import { Button } from '@/components/dom/gui/Button';
 import Head from 'next/head';
 import Link from 'next/link';
 

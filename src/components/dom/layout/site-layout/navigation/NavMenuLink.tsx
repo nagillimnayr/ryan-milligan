@@ -1,7 +1,7 @@
 import { cn } from '@/helpers/cn';
 import type { LinkProps } from '@/components/props/Props';
 import Link from 'next/link';
-import { Button } from '@/components/gui/Button';
+import { Button } from '@/components/dom/gui/Button';
 
 const NavMenuLink = ({ children, className, href }: LinkProps) => {
   return (
