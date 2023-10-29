@@ -13,8 +13,9 @@ import {
   iceland,
   atkinson_hyperlegible,
 } from '@/helpers/fonts';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import Scene from '@/components/canvas/scene/Scene';
 
 const fontVariables = [
   roboto.variable,
@@ -53,8 +54,11 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     setTheme(storedTheme);
   }, [setTheme, systemTheme]);
 
+  const ref = useRef<HTMLDivElement>(null!);
+
   return (
     <div
+    ref={ref}
       className={cn(
         ...fontVariables,
         'absolute left-0 top-0 m-0 flex h-full w-full flex-col items-stretch p-0'
@@ -62,7 +66,19 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     >
       <SiteHeader />
       {children}
+      <Scene style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+        }} 
+        eventSource={ref}
+        eventPrefix='client'
+        />
       <SiteFooter />
+      
     </div>
   );
 }
