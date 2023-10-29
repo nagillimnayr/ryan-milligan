@@ -6,18 +6,18 @@ import { cn } from '@/helpers/cn';
 import RippleEffect from './RippleEffect';
 
 const buttonVariants = cva(
-  'relative inline-flex items-center justify-center m-0 rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring duration-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 overflow-hidden',
+  'relative m-0 inline-flex items-center justify-center overflow-hidden rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'bg-button-primary text-button-primary-foreground hover:bg-button-primary-focus border-border  hover:scale-110',
+          'border-border bg-button-primary text-button-primary-foreground hover:scale-110  hover:bg-button-primary-focus',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive',
         outline:
           'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary border-2 border-border',
+          'border-2 border-border bg-secondary text-secondary-foreground hover:bg-secondary',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
       },
