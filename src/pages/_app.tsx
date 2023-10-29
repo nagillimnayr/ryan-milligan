@@ -1,6 +1,6 @@
 import SiteLayout from '@/components/layout/site-layout/SiteLayout';
 import Providers from '@/components/providers/providers';
-import { trpc } from '@/lib/trpc/trpc';
+import { trpc } from '@/helpers/trpc/trpc';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import type { AppType } from 'next/app';

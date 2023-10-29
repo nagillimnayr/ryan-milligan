@@ -1,4 +1,4 @@
-import { PageData } from '@/lib/mdx/getPageData';
+import { PageData } from '@/helpers/mdx/getPageData';
 import { format, parse as parseDateString } from 'date-fns';
 import Link from 'next/link';
 

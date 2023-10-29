@@ -1,7 +1,7 @@
 import { Menu } from '@headlessui/react';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/cn';
+import { cn } from '@/helpers/cn';
 import { ChevronDownIcon } from 'lucide-react';
 import type { CommonProps } from '@/components/props/Props';
 

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/cn';
+import { cn } from '@/helpers/cn';
 import Link from 'next/link';
 import { type ClassNameValue } from 'tailwind-merge';
 

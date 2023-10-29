@@ -1,4 +1,4 @@
-import { cn } from '@/lib/cn';
+import { cn } from '@/helpers/cn';
 import NavMenuLink from './NavMenuLink';
 import { type ClassNameValue } from 'tailwind-merge';
 

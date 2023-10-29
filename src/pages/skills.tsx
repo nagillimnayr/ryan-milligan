@@ -1,4 +1,4 @@
-import { cn } from '@/lib/cn';
+import { cn } from '@/helpers/cn';
 import { type ClassNameValue } from 'tailwind-merge';
 
 const skills = [

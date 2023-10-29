@@ -4,7 +4,7 @@ import { Button } from '@/components/gui/Button';
 import RippleEffect from '@/components/gui/RippleEffect';
 import { Card } from '@/components/card/Card';
 import { ContactLinks } from '@/components/ContactLinks';
-import { trpc } from '@/lib/trpc/trpc';
+import { trpc } from '@/helpers/trpc/trpc';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });

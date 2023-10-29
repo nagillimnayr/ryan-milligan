@@ -1,5 +1,5 @@
 import { IconSwitch } from '@/components/ui/switch-icon';
-import { cn } from '@/lib/cn';
+import { cn } from '@/helpers/cn';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useCallback, useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
