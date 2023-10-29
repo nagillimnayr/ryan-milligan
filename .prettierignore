@@ -1,0 +1,13 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+**/*.md
+**/*.mdx
+build/*
+dist/*
+public/*
+.next/*
+node_modules/*
+package.json
+*.log
