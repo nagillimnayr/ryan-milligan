@@ -7,7 +7,7 @@ import { trpc } from '@/helpers/trpc/trpc';
 import Link from 'next/link';
 import { Common, View } from '@/components/canvas/scene/View';
 import { Name3D } from '@/components/canvas/Name3D';
-import { Sphere } from '@react-three/drei';
+import { PerspectiveCamera, Sphere } from '@react-three/drei';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -17,9 +17,10 @@ export default function Home() {
     <main
       className={`grid h-full w-full grid-cols-1 place-items-center items-center justify-start gap-8 px-24 pb-24 pt-16 font-sans`}
     >
-      <View className='h-96 w-full border-2 border-red-500 '>
+      <View className='h-96 w-screen border-2 border-red-500 '>
         <Name3D />
-        <Common cameraPosition={[0, 0, 5]} />
+        <PerspectiveCamera makeDefault position-z={3} />
+        <directionalLight position={[0, 30, 20]} intensity={2.0} />
       </View>
       <section className='container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl'>
         <div className='flex h-44 w-full flex-col items-center justify-center gap-2'>
