@@ -1,9 +1,9 @@
-import { Center, Sphere, Text3D } from '@react-three/drei';
+import { Center } from '@react-three/drei';
 import { useTheme } from 'next-themes';
 import { useSpring, animated } from '@react-spring/three';
 import { anim } from '@/helpers/react-spring-utils';
 import { useCallback, useLayoutEffect, useRef } from 'react';
-import { Mesh, Object3D, Plane, Vector3 } from 'three';
+import { type Mesh, type Object3D, Plane, Vector3 } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Z_AXIS } from '@/helpers/constants';
 
@@ -19,7 +19,6 @@ export const Name3D = function Name3D() {
 
   const pivotRef = useRef<Object3D>(null!);
   const textRef = useRef<Mesh>(null!);
-  const sphereRef = useRef<Mesh>(null!);
 
   const [spring, springRef] = useSpring(() => ({
     color: theme === 'dark' ? 'white' : 'black',
@@ -46,7 +45,6 @@ export const Name3D = function Name3D() {
     raycaster.setFromCamera(pointer, camera);
     raycaster.ray.intersectPlane(_plane, _lookPos);
     pivotRef.current?.lookAt(_lookPos);
-    sphereRef.current?.position.copy(_lookPos);
   });
 
   return (
@@ -76,7 +74,6 @@ export const Name3D = function Name3D() {
           </anim.Text3D>
         </Center>
       </object3D>
-      {/* <Sphere ref={sphereRef} material-color={'red'} scale={0.1} /> */}
     </>
   );
 };
