@@ -7,7 +7,6 @@ export const Name3D = function Name3D() {
   return(
     <>
     <Center>
-
       <Text3D
       font={fontURL} letterSpacing={0.15}>Ryan Milligan</Text3D>
       </Center>
