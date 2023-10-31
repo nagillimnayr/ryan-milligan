@@ -1,15 +1,15 @@
 import { Center, Text3D } from '@react-three/drei';
 
+const FONT_URL = 'fonts/Roboto_Regular.json';
+
 export const Name3D = function Name3D() {
-
-
-  const fontURL = 'fonts/Roboto_Regular.json';
-  return(
+  return (
     <>
-    <Center>
-      <Text3D
-      font={fontURL} letterSpacing={0.15}>Ryan Milligan</Text3D>
+      <Center>
+        <Text3D font={FONT_URL} letterSpacing={0.05}>
+          Ryan Milligan
+        </Text3D>
       </Center>
     </>
-  )
-}
+  );
+};
