@@ -10,7 +10,7 @@ import { Z_AXIS } from '@/helpers/constants';
 const _lookPos = new Vector3();
 const _plane = new Plane(Z_AXIS, -2);
 
-const FONT_URL = 'fonts/Roboto_Regular.json';
+const FONT_URL = 'fonts/Audiowide_Regular.json';
 
 export const Name3D = function Name3D() {
   const { theme } = useTheme();
@@ -70,7 +70,7 @@ export const Name3D = function Name3D() {
               flatShading={false}
               roughness={0.9}
             />
-            Ryan Milligan
+            RYAN MILLIGAN
           </anim.Text3D>
         </Center>
       </object3D>
