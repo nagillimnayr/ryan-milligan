@@ -3,14 +3,15 @@ import { useTheme } from 'next-themes';
 import { useSpring, animated } from '@react-spring/three';
 import { anim } from '@/helpers/react-spring-utils';
 import { useCallback, useLayoutEffect, useRef } from 'react';
-import { Mesh, Object3D, Plane, Vector3 } from 'three';
+import { type Mesh, type Object3D, Plane, Vector3, Vector3Tuple } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Z_AXIS } from '@/helpers/constants';
 
+const _v1 = new Vector3();
 const _lookPos = new Vector3();
 const _plane = new Plane(Z_AXIS, -2);
 
-const FONT_URL = 'fonts/Roboto_Regular.json';
+const FONT_URL = 'fonts/Orbitron_Regular.json';
 
 export const Name3D = function Name3D() {
   const { theme } = useTheme();
@@ -23,6 +24,17 @@ export const Name3D = function Name3D() {
 
   const [spring, springRef] = useSpring(() => ({
     color: theme === 'dark' ? 'white' : 'black',
+    config: {
+      friction: 100,
+    },
+  }));
+  const [lookSpring, looKSpringRef] = useSpring(() => ({
+    lookPos: [0,0,0],
+    onChange: ({value})=>{
+      const lookPos = value.lookPos as Vector3Tuple;
+      _v1.set(...lookPos);
+      pivotRef.current.lookAt(_v1);
+    },
     config: {
       friction: 100,
     },
