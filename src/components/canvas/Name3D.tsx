@@ -1,4 +1,4 @@
-import { Center, Sphere, Text3D } from '@react-three/drei';
+import { Center } from '@react-three/drei';
 import { useTheme } from 'next-themes';
 import { useSpring, animated } from '@react-spring/three';
 import { anim } from '@/helpers/react-spring-utils';
@@ -11,7 +11,7 @@ const _v1 = new Vector3();
 const _lookPos = new Vector3();
 const _plane = new Plane(Z_AXIS, -2);
 
-const FONT_URL = 'fonts/Orbitron_Regular.json';
+const FONT_URL = 'fonts/Audiowide_Regular.json';
 
 export const Name3D = function Name3D() {
   const { theme } = useTheme();
@@ -20,7 +20,6 @@ export const Name3D = function Name3D() {
 
   const pivotRef = useRef<Object3D>(null!);
   const textRef = useRef<Mesh>(null!);
-  const sphereRef = useRef<Mesh>(null!);
 
   const [spring, springRef] = useSpring(() => ({
     color: theme === 'dark' ? 'white' : 'black',
@@ -29,8 +28,8 @@ export const Name3D = function Name3D() {
     },
   }));
   const [lookSpring, looKSpringRef] = useSpring(() => ({
-    lookPos: [0,0,0],
-    onChange: ({value})=>{
+    lookPos: [0, 0, 0],
+    onChange: ({ value }) => {
       const lookPos = value.lookPos as Vector3Tuple;
       _v1.set(...lookPos);
       pivotRef.current.lookAt(_v1);
@@ -58,7 +57,6 @@ export const Name3D = function Name3D() {
     raycaster.setFromCamera(pointer, camera);
     raycaster.ray.intersectPlane(_plane, _lookPos);
     pivotRef.current?.lookAt(_lookPos);
-    sphereRef.current?.position.copy(_lookPos);
   });
 
   return (
@@ -84,11 +82,10 @@ export const Name3D = function Name3D() {
               flatShading={false}
               roughness={0.9}
             />
-            Ryan Milligan
+            RYAN MILLIGAN
           </anim.Text3D>
         </Center>
       </object3D>
-      {/* <Sphere ref={sphereRef} material-color={'red'} scale={0.1} /> */}
     </>
   );
 };

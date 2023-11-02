@@ -22,7 +22,7 @@ export default function Home() {
         <PerspectiveCamera makeDefault position-z={3} />
         <directionalLight position={[0, 30, 20]} intensity={2.0} />
       </View>
-      <section className='container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl'>
+      {/* <section className='container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl'>
         <div className='flex h-44 w-full flex-col items-center justify-center gap-2'>
           <h1 className='flex flex-row text-center font-display'>
             Hello, I&apos;m Ryan
@@ -42,11 +42,9 @@ export default function Home() {
             <Link href={'/projects'} className='no-underline'>
               My Projects
             </Link>
-
-            {/* <RippleEffect /> */}
           </Button>
         </div>
-      </section>
+      </section> */}
 
       <div className='container mx-auto mb-32 flex w-fit min-w-fit justify-between gap-8  border-2 border-transparent text-center lg:mb-0 lg:grid-cols-4 lg:text-left'>
         <Card href={'/projects'} heading='Projects' description='' />
