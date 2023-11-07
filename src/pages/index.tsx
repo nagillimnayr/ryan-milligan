@@ -16,9 +16,9 @@ export default function Home() {
   const hello = trpc.hello.useQuery({ text: 'client' });
   return (
     <main
-      className={`grid h-full w-full grid-cols-1 place-items-center items-center justify-start gap-8 px-24 pb-24 pt-16 font-sans`}
+      className={`m-0 flex h-full w-full flex-col items-center justify-center p-0 font-sans`}
     >
-      <View className='h-96 w-screen border-2 border-red-500 ' orbit>
+      <View className='h-full w-full border-2 border-red-500 ' orbit>
         <MainScene />
       </View>
 
