@@ -85,8 +85,9 @@ export const Name3D = function Name3D({ position, scale }: Name3DProps) {
             {/* @ts-ignore */}
             <animated.meshStandardMaterial
               color={spring.color}
-              flatShading={false}
-              roughness={0.9}
+              // flatShading={false}
+              // metalness={0.1}
+              // roughness={0.1}
             />
             RYAN MILLIGAN
           </anim.Text3D>
