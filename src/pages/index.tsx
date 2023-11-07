@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Common, View } from '@/components/canvas/scene/View';
 import { Name3D } from '@/components/canvas/Name3D';
 import { PerspectiveCamera, Sphere } from '@react-three/drei';
+import { MainScene } from '@/components/canvas/scene/MainScene';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -17,39 +18,12 @@ export default function Home() {
     <main
       className={`grid h-full w-full grid-cols-1 place-items-center items-center justify-start gap-8 px-24 pb-24 pt-16 font-sans`}
     >
-      <View className='h-96 w-screen border-2 border-red-500 '>
-        <Name3D />
-        <PerspectiveCamera makeDefault position-z={3} />
-        <directionalLight position={[0, 30, 20]} intensity={2.0} />
+      <View className='h-96 w-screen border-2 border-red-500 ' orbit>
+        <MainScene />
       </View>
-      {/* <section className='container prose flex h-96 min-h-fit flex-col items-center justify-center gap-6 rounded-xl border-2 px-12 py-8 shadow-lg shadow-blue-800/50 transition-all duration-700 delay-200 hover:scale-105 hover:border-4 hover:shadow-2xl hover:shadow-blue-800/50 hover:delay-0 prose-h1:mb-1 lg:max-w-3xl'>
-        <div className='flex h-44 w-full flex-col items-center justify-center gap-2'>
-          <h1 className='flex flex-row text-center font-display'>
-            Hello, I&apos;m Ryan
-          </h1>
-          <p className='overflow-hidden text-ellipsis text-center font-sans text-lg font-medium md:w-96 lg:w-[26rem]'>
-            I&apos;m a computer science student who&apos;s passionate about
-            programming, computer graphics, physics, and making cool stuff.
-          </p>
-        </div>
-
-        <div className='flex h-fit w-full flex-row items-center justify-center gap-8'>
-          <Button
-            variant={'default'}
-            className='inline-flex items-center justify-center'
-            asChild
-          >
-            <Link href={'/projects'} className='no-underline'>
-              My Projects
-            </Link>
-          </Button>
-        </div>
-      </section> */}
 
       <div className='container mx-auto mb-32 flex w-fit min-w-fit justify-between gap-8  border-2 border-transparent text-center lg:mb-0 lg:grid-cols-4 lg:text-left'>
         <Card href={'/projects'} heading='Projects' description='' />
-
-        {/* <Card href={'/experiments'} heading="Experiments" description="" /> */}
 
         <Card href={'/skills'} heading='Skills' description='' />
       </div>

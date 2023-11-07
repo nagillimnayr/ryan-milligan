@@ -13,7 +13,11 @@ const _plane = new Plane(Z_AXIS, -2);
 
 const FONT_URL = 'fonts/Audiowide_Regular.json';
 
-export const Name3D = function Name3D() {
+type Name3DProps = {
+  position?: Vector3Tuple;
+  scale?: Vector3Tuple;
+};
+export const Name3D = function Name3D({ position, scale }: Name3DProps) {
   const { theme } = useTheme();
   const themeRef = useRef<string | undefined>(null!);
   themeRef.current = theme;
@@ -53,20 +57,22 @@ export const Name3D = function Name3D() {
     springRef.start({ color: theme === 'dark' ? 'white' : 'black' });
   }, [springRef, theme]);
 
-  useFrame(({ pointer, camera, raycaster }) => {
-    raycaster.setFromCamera(pointer, camera);
-    raycaster.ray.intersectPlane(_plane, _lookPos);
-    pivotRef.current?.lookAt(_lookPos);
-  });
+  // useFrame(({ pointer, camera, raycaster }) => {
+  //   raycaster.setFromCamera(pointer, camera);
+  //   raycaster.ray.intersectPlane(_plane, _lookPos);
+  //   pivotRef.current?.lookAt(_lookPos);
+  // });
 
   return (
     <>
-      <object3D ref={pivotRef} scale={0.5}>
-        <Center>
+      <object3D ref={pivotRef} scale={scale} position={position}>
+        <Center position-y={0.5}>
           <anim.Text3D
             ref={textRef}
             font={FONT_URL}
+            // scale={scale}
             letterSpacing={0.05}
+            height={1}
             castShadow
             // bevelEnabled
             // bevelSize={0.005}
