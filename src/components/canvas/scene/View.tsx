@@ -20,9 +20,7 @@ type CommonProps = {
   color?: ColorRepresentation;
   cameraPosition?: Vector3Tuple;
 };
-export const Common = ({ color,
-  cameraPosition = [0,0,10]
-}: CommonProps) => (
+export const Common = ({ color, cameraPosition = [0, 0, 10] }: CommonProps) => (
   <Suspense fallback={null}>
     {color && <color attach='background' args={[color]} />}
     <ambientLight intensity={0.5} />
