@@ -59,7 +59,7 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   return (
     <>
       <object3D ref={pivotRef} {...props}>
-        <Center position-y={0.5}>
+        <Center position-y={0.5} scale-z={0.75}>
           <anim.Text3D
             ref={textRef}
             font={FONT_URL}
