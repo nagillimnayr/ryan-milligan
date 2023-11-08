@@ -1,4 +1,10 @@
-import { Grid, PerspectiveCamera, Sphere, useHelper } from '@react-three/drei';
+import {
+  Grid,
+  PerspectiveCamera,
+  Sphere,
+  useHelper,
+  CameraControls,
+} from '@react-three/drei';
 import { Name3D } from '../Name/Name3D';
 import { useRef } from 'react';
 import {
@@ -10,6 +16,8 @@ import {
 } from 'three';
 import { Floor } from './Floor';
 import { degToRad } from 'three/src/math/MathUtils';
+import { Ball } from '../Ball';
+import { PI_OVER_THREE } from '@/helpers/constants';
 
 export const MainScene = () => {
   // const dirLightRef = useRef<DirectionalLight>(null!);
@@ -18,13 +26,8 @@ export const MainScene = () => {
   useHelper(pointLightRef, PointLightHelper);
   return (
     <>
-      <PerspectiveCamera makeDefault position-z={3} position-y={3} />
-      {/* <directionalLight
-        ref={dirLightRef}
-        position={[10, 1, 20]}
-        intensity={2.0}
-        castShadow
-      /> */}
+      <PerspectiveCamera makeDefault />
+      <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
 
       <pointLight
         ref={pointLightRef}
@@ -40,13 +43,13 @@ export const MainScene = () => {
       </Name3D>
       <Floor />
 
-      <Sphere args={[1, 128, 128]} position-y={1} castShadow>
+      <Ball args={[1, 128, 128]} position-y={2} castShadow>
         <meshStandardMaterial
           color={'red'}
           metalness={0.5}
           shadowSide={FrontSide}
         />
-      </Sphere>
+      </Ball>
     </>
   );
 };
