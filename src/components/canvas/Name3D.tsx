@@ -74,6 +74,7 @@ export const Name3D = function Name3D({ position, scale }: Name3DProps) {
             letterSpacing={0.05}
             height={1}
             castShadow
+            receiveShadow
             // bevelEnabled
             // bevelSize={0.005}
             // bevelSegments={36}
@@ -89,7 +90,7 @@ export const Name3D = function Name3D({ position, scale }: Name3DProps) {
               // metalness={0.1}
               // roughness={0.1}
             />
-            RYAN MILLIGAN
+            RYAN
           </anim.Text3D>
         </Center>
       </object3D>
