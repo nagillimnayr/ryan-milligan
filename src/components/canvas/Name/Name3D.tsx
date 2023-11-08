@@ -14,10 +14,15 @@ const _plane = new Plane(Z_AXIS, -2);
 const FONT_URL = 'fonts/Audiowide_Regular.json';
 
 type Name3DProps = {
+  children: string;
   position?: Vector3Tuple;
   scale?: Vector3Tuple;
 };
-export const Name3D = function Name3D({ position, scale }: Name3DProps) {
+export const Name3D = function Name3D({
+  children,
+  position,
+  scale,
+}: Name3DProps) {
   const { theme } = useTheme();
   const themeRef = useRef<string | undefined>(null!);
   themeRef.current = theme;
@@ -57,12 +62,6 @@ export const Name3D = function Name3D({ position, scale }: Name3DProps) {
     springRef.start({ color: theme === 'dark' ? 'white' : 'black' });
   }, [springRef, theme]);
 
-  // useFrame(({ pointer, camera, raycaster }) => {
-  //   raycaster.setFromCamera(pointer, camera);
-  //   raycaster.ray.intersectPlane(_plane, _lookPos);
-  //   pivotRef.current?.lookAt(_lookPos);
-  // });
-
   return (
     <>
       <object3D ref={pivotRef} scale={scale} position={position}>
@@ -84,13 +83,8 @@ export const Name3D = function Name3D({ position, scale }: Name3DProps) {
             onPointerLeave={handlePointerLeave}
           >
             {/* @ts-ignore */}
-            <animated.meshStandardMaterial
-              color={spring.color}
-              // flatShading={false}
-              // metalness={0.1}
-              // roughness={0.1}
-            />
-            RYAN
+            <animated.meshStandardMaterial color={spring.color} />
+            {children}
           </anim.Text3D>
         </Center>
       </object3D>
