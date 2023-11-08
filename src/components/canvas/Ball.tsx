@@ -7,7 +7,7 @@ export type BallProps = ShapeProps<typeof SphereGeometry> & {
 };
 export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
   return (
-    <RigidBody>
+    <RigidBody colliders={'ball'}>
       <Sphere castShadow receiveShadow {...props}>
         {children}
         <meshStandardMaterial color={color} />
