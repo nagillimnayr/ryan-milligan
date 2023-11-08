@@ -4,7 +4,7 @@ import { useSpring, animated } from '@react-spring/three';
 import { anim } from '@/helpers/react-spring-utils';
 import { useCallback, useLayoutEffect, useRef } from 'react';
 import { type Mesh, type Object3D, Plane, Vector3, Vector3Tuple } from 'three';
-import { useFrame } from '@react-three/fiber';
+import { Object3DProps, useFrame } from '@react-three/fiber';
 import { Z_AXIS } from '@/helpers/constants';
 
 const _v1 = new Vector3();
@@ -13,16 +13,10 @@ const _plane = new Plane(Z_AXIS, -2);
 
 const FONT_URL = 'fonts/Audiowide_Regular.json';
 
-type Name3DProps = {
+type Name3DProps = Pick<Object3DProps, 'position' | 'scale' | 'rotation'> & {
   children: string;
-  position?: Vector3Tuple;
-  scale?: Vector3Tuple;
 };
-export const Name3D = function Name3D({
-  children,
-  position,
-  scale,
-}: Name3DProps) {
+export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   const { theme } = useTheme();
   const themeRef = useRef<string | undefined>(null!);
   themeRef.current = theme;
@@ -64,12 +58,11 @@ export const Name3D = function Name3D({
 
   return (
     <>
-      <object3D ref={pivotRef} scale={scale} position={position}>
+      <object3D ref={pivotRef} {...props}>
         <Center position-y={0.5}>
           <anim.Text3D
             ref={textRef}
             font={FONT_URL}
-            // scale={scale}
             letterSpacing={0.05}
             height={1}
             castShadow
