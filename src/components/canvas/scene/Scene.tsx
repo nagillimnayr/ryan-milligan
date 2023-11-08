@@ -12,7 +12,7 @@ export default function Scene({ ...props }: SceneProps) {
   return (
     <Canvas {...props} shadows>
       <Suspense>
-        <Physics>
+        <Physics debug>
           {/* @ts-ignore */}
           <r3f.Out />
           <Preload all />
