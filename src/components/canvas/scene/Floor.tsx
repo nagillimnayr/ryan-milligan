@@ -30,9 +30,7 @@ export const Floor = () => {
   return (
     <group>
       {/* <Grid args={args} position-y={0.01} /> */}
-      <Box position-y={5}>
-        <meshBasicMaterial map={checkerTexture} />
-      </Box>
+
       <RigidBody>
         <Plane rotation-x={-PI_OVER_TWO} args={args} receiveShadow>
           <meshStandardMaterial
