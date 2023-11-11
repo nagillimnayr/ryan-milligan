@@ -10,7 +10,7 @@ export const SelectionProvider = ({ children }: PropsWithChildren) => {
     <>
       <Selection>
         <EffectComposer autoClear={false}>
-          <Outline blur edgeStrength={100} />
+          <Outline blur edgeStrength={1000} />
         </EffectComposer>
         {children}
       </Selection>
