@@ -1,10 +1,20 @@
-import { Grid, Plane } from '@react-three/drei';
-import { useMemo } from 'react';
+import { Box, Grid, Plane, useTexture } from '@react-three/drei';
+import { useEffect, useMemo } from 'react';
 import { PI_OVER_TWO } from '@/helpers/constants';
-import { FrontSide } from 'three';
 import { CuboidCollider, RigidBody } from '@react-three/rapier';
+import * as THREE from 'three';
 
 export const Floor = () => {
+  const checkerTexture = useTexture('textures/checker.png');
+
+  useEffect(() => {
+    checkerTexture.center.set(0.5, 0.5);
+    const rep = 3;
+    checkerTexture.repeat.set(3, 3);
+    checkerTexture.wrapS = THREE.RepeatWrapping;
+    checkerTexture.wrapT = THREE.RepeatWrapping;
+  }, [checkerTexture]);
+
   const [args, cuboidArgs]: [
     [number, number, number, number],
     [number, number, number],
@@ -20,10 +30,16 @@ export const Floor = () => {
   }, []);
   return (
     <group>
-      <Grid args={args} position-y={0.01} />
+      {/* <Grid args={args} position-y={0.01} /> */}
+      <Box position-y={5}>
+        <meshBasicMaterial map={checkerTexture} />
+      </Box>
       <RigidBody>
         <Plane rotation-x={-PI_OVER_TWO} args={args} receiveShadow>
-          <meshStandardMaterial shadowSide={FrontSide} />
+          <meshStandardMaterial
+            // shadowSide={THREE.FrontSide}
+            map={checkerTexture}
+          />
         </Plane>
       </RigidBody>
       <CuboidCollider position={[0, 0, 0]} args={cuboidArgs} />
