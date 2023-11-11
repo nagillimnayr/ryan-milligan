@@ -5,15 +5,14 @@ import { CuboidCollider, RigidBody } from '@react-three/rapier';
 import * as THREE from 'three';
 
 export const Floor = () => {
-  const checkerTexture = useTexture('textures/checker.png');
-
-  useEffect(() => {
-    checkerTexture.center.set(0.5, 0.5);
+  const checkerTexture = useTexture('textures/checkerboard.jpg', (texture) => {
+    if (Array.isArray(texture)) return;
+    texture.center.set(0.5, 0.5);
     const rep = 3;
-    checkerTexture.repeat.set(3, 3);
-    checkerTexture.wrapS = THREE.RepeatWrapping;
-    checkerTexture.wrapT = THREE.RepeatWrapping;
-  }, [checkerTexture]);
+    texture.repeat.set(rep, rep);
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+  });
 
   const [args, cuboidArgs]: [
     [number, number, number, number],
@@ -39,6 +38,7 @@ export const Floor = () => {
           <meshStandardMaterial
             // shadowSide={THREE.FrontSide}
             map={checkerTexture}
+            side={THREE.DoubleSide}
           />
         </Plane>
       </RigidBody>
