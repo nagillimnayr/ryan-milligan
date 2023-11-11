@@ -18,12 +18,10 @@ export const Floor = () => {
     [number, number, number, number],
     [number, number, number],
   ] = useMemo(() => {
-    const width = 20;
-    const height = 20;
-    const widthSegments = 20;
-    const heightSegments = 20;
+    const width = 25;
+    const height = 25;
     return [
-      [width, height, widthSegments, heightSegments],
+      [width, height, 1, 1],
       [width / 2, height / 2, 0.01],
     ];
   }, []);
