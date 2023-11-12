@@ -41,16 +41,6 @@ export const TrackingSpotLight = ({
     spotLight.target.position.lerp(_targetPos, delta);
   });
 
-  useEventListener('keydown', (event) => {
-    const spotLight = spotLightRef.current;
-    switch (event.code) {
-      case 'Space': {
-        console.log(spotLight);
-        console.log(spotLight.children);
-      }
-    }
-  });
-
   useEffect(() => {
     const spotLight = spotLightRef.current;
     coneRef.current = spotLight.children[0] as THREE.Mesh;
