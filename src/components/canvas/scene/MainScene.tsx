@@ -4,6 +4,8 @@ import {
   Sphere,
   useHelper,
   CameraControls,
+  AccumulativeShadows,
+  useDepthBuffer,
 } from '@react-three/drei';
 import { Name3D } from '../Name/Name3D';
 import { useRef } from 'react';
@@ -13,55 +15,51 @@ import {
   FrontSide,
   PointLight,
   PointLightHelper,
+  SpotLight,
+  SpotLightHelper,
 } from 'three';
 import { Floor } from './Floor';
 import { degToRad } from 'three/src/math/MathUtils';
 import { Ball } from '../Ball';
 import { PI, PI_OVER_THREE, PI_OVER_TWO } from '@/helpers/constants';
 import { Pendulum } from '../pendulum/Pendulum';
+import { TrackingSpotLight } from './lighting/TrackingSpotLight';
 
 export const MainScene = () => {
   const dirLightRef = useRef<DirectionalLight>(null!);
   const pointLightRef = useRef<PointLight>(null!);
-  useHelper(dirLightRef, DirectionalLightHelper, 1, 'red');
-  useHelper(pointLightRef, PointLightHelper, 1, 'red');
+  const spotLightRef = useRef<SpotLight>(null!);
+  // useHelper(pointLightRef, PointLightHelper, 1, 'red');
+
+  const depthBuffer = useDepthBuffer({ frames: 1 });
+
   return (
     <>
+      <color attach={'background'} args={['#202020']} />
+      <fog attach={'fog'} args={['#202020', 5, 20]} />
+      {/* <axesHelper scale={2} position-y={0.01} /> */}
       <PerspectiveCamera makeDefault />
       <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
 
-      {/* <pointLight
-        ref={pointLightRef}
-        position={[0, 5, 0]}
-        castShadow
-        distance={100}
-        intensity={20}
-      /> */}
-      <directionalLight
-        ref={dirLightRef}
-        position={[10, 10, 10]}
-        castShadow
-        shadow-camera-near={1e-3}
-        shadow-camera-far={1e4}
-        shadow-camera-bottom={-20}
-        shadow-camera-top={20}
-        shadow-camera-left={-20}
-        shadow-camera-right={20}
+      <TrackingSpotLight
+        position={[8, 5, -5]}
+        // color='#0c8cbf'
+        // depthBuffer={depthBuffer}
       />
-      <ambientLight intensity={0.2} color={'#3a74f7'} />
+      <TrackingSpotLight
+        position={[-8, 5, -5]}
+        // color='#b00c3f'
+        // depthBuffer={depthBuffer}
+      />
+
+      <ambientLight intensity={0.015} color={'#3a74f7'} />
+
       <Name3D position={[-5, 0, -5]} rotation-y={degToRad(45)}>
         RYAN
       </Name3D>
       <Floor />
 
-      {/* <Ball args={[1, 128, 128]} position-y={2} castShadow>
-        <meshStandardMaterial
-          color={'red'}
-          metalness={0.5}
-          shadowSide={FrontSide}
-        />
-      </Ball> */}
-      <Pendulum position={[0, 10, 0]} rotation-x={PI_OVER_TWO} />
+      <Pendulum position={[5, 10, 0]} rotation-x={PI_OVER_TWO} />
     </>
   );
 };
