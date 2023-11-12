@@ -1,5 +1,5 @@
 import { Sphere, type ShapeProps } from '@react-three/drei';
-import { RigidBody } from '@react-three/rapier';
+import { BallCollider, RigidBody, BallArgs } from '@react-three/rapier';
 import { type ColorRepresentation, type SphereGeometry } from 'three';
 import { Select } from '@react-three/postprocessing';
 import { useCallback, useState } from 'react';
@@ -17,13 +17,14 @@ export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
   }, []);
   return (
     <>
-      <RigidBody colliders={'ball'}>
+      <RigidBody colliders='false'>
         <Select enabled={true}>
           <Sphere castShadow receiveShadow {...props} onClick={handleClick}>
             {children}
             <meshStandardMaterial color={color} />
           </Sphere>
         </Select>
+        <BallCollider args={[1]} />
       </RigidBody>
     </>
   );
