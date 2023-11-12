@@ -17,7 +17,8 @@ import {
 import { Floor } from './Floor';
 import { degToRad } from 'three/src/math/MathUtils';
 import { Ball } from '../Ball';
-import { PI_OVER_THREE } from '@/helpers/constants';
+import { PI, PI_OVER_THREE, PI_OVER_TWO } from '@/helpers/constants';
+import { Pendulum } from '../pendulum/Pendulum';
 
 export const MainScene = () => {
   const dirLightRef = useRef<DirectionalLight>(null!);
@@ -29,13 +30,13 @@ export const MainScene = () => {
       <PerspectiveCamera makeDefault />
       <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
 
-      <pointLight
+      {/* <pointLight
         ref={pointLightRef}
         position={[0, 5, 0]}
         castShadow
         distance={100}
         intensity={20}
-      />
+      /> */}
       <directionalLight ref={dirLightRef} position={[10, 10, 10]} castShadow />
       <ambientLight intensity={0.2} color={'#3a74f7'} />
       <Name3D position={[-5, 0, -5]} rotation-y={degToRad(45)}>
@@ -43,13 +44,14 @@ export const MainScene = () => {
       </Name3D>
       <Floor />
 
-      <Ball args={[1, 128, 128]} position-y={2} castShadow>
+      {/* <Ball args={[1, 128, 128]} position-y={2} castShadow>
         <meshStandardMaterial
           color={'red'}
           metalness={0.5}
           shadowSide={FrontSide}
         />
-      </Ball>
+      </Ball> */}
+      <Pendulum position={[0, 10, 0]} rotation-x={PI_OVER_TWO} />
     </>
   );
 };
