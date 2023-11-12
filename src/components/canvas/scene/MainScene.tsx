@@ -42,15 +42,9 @@ export const MainScene = () => {
       {/* <axesHelper scale={2} position-y={0.01} /> */}
       <CameraManager />
 
-      <TrackingSpotLight position={[0, 5, 0]} />
-      {/* <TrackingSpotLight
-        position={[8, 5, -5]}
-        color='#0c8cbf'
-      />
-      <TrackingSpotLight
-        position={[-8, 5, -5]}
-        color='#b00c3f'
-      /> */}
+      <TrackingSpotLight position={[0, 5, 2]} />
+      {/* <TrackingSpotLight position={[-3, 5, -3]} /> */}
+      {/* <TrackingSpotLight position={[3, 5, -3]} /> */}
 
       <ambientLight intensity={0.015} color={'#3a74f7'} />
 
