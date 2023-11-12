@@ -31,8 +31,6 @@ export const MainScene = () => {
   const spotLightRef = useRef<SpotLight>(null!);
   // useHelper(pointLightRef, PointLightHelper, 1, 'red');
 
-  const depthBuffer = useDepthBuffer({ frames: 1 });
-
   return (
     <>
       <color attach={'background'} args={['#202020']} />
@@ -41,10 +39,7 @@ export const MainScene = () => {
       <PerspectiveCamera makeDefault />
       <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
 
-      <TrackingSpotLight
-        position={[0, 5, 0]}
-        // depthBuffer={depthBuffer}
-      />
+      <TrackingSpotLight position={[0, 5, 0]} />
       {/* <TrackingSpotLight
         position={[8, 5, -5]}
         color='#0c8cbf'
