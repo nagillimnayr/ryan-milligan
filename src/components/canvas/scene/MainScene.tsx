@@ -43,12 +43,12 @@ export const MainScene = () => {
 
       <TrackingSpotLight
         position={[8, 5, -5]}
-        // color='#0c8cbf'
+        color='#0c8cbf'
         // depthBuffer={depthBuffer}
       />
       <TrackingSpotLight
         position={[-8, 5, -5]}
-        // color='#b00c3f'
+        color='#b00c3f'
         // depthBuffer={depthBuffer}
       />
 
