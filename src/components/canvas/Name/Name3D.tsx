@@ -12,6 +12,8 @@ const _lookPos = new Vector3();
 const _plane = new Plane(Z_AXIS, -2);
 
 const FONT_URL = 'fonts/Audiowide_Regular.json';
+const TEXT_COLOR_LIGHT = 'cyan';
+const TEXT_COLOR_DARK = 'white';
 
 type Name3DProps = Pick<Object3DProps, 'position' | 'scale' | 'rotation'> & {
   children: string;
@@ -25,7 +27,7 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   const textRef = useRef<Mesh>(null!);
 
   const [spring, springRef] = useSpring(() => ({
-    color: theme === 'dark' ? 'white' : 'black',
+    color: theme === 'dark' ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT,
     config: {
       friction: 100,
     },
@@ -49,11 +51,15 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   }, [springRef]);
 
   const handlePointerLeave = useCallback(() => {
-    springRef.start({ color: themeRef.current === 'dark' ? 'white' : 'black' });
+    springRef.start({
+      color: themeRef.current === 'dark' ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT,
+    });
   }, [springRef]);
 
   useLayoutEffect(() => {
-    springRef.start({ color: theme === 'dark' ? 'white' : 'black' });
+    springRef.start({
+      color: theme === 'dark' ? TEXT_COLOR_DARK : TEXT_COLOR_LIGHT,
+    });
   }, [springRef, theme]);
 
   return (
