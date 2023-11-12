@@ -24,6 +24,8 @@ import { Ball } from '../Ball';
 import { PI, PI_OVER_THREE, PI_OVER_TWO } from '@/helpers/constants';
 import { Pendulum } from '../pendulum/Pendulum';
 import { TrackingSpotLight } from './lighting/TrackingSpotLight';
+import { useKeyboard } from '@/helpers/hooks/useKeyboard';
+import { CameraManager } from './CameraManager';
 
 export const MainScene = () => {
   const dirLightRef = useRef<DirectionalLight>(null!);
@@ -31,13 +33,14 @@ export const MainScene = () => {
   const spotLightRef = useRef<SpotLight>(null!);
   // useHelper(pointLightRef, PointLightHelper, 1, 'red');
 
+  useKeyboard();
+
   return (
     <>
       <color attach={'background'} args={['#202020']} />
       <fog attach={'fog'} args={['#202020', 5, 20]} />
       {/* <axesHelper scale={2} position-y={0.01} /> */}
-      <PerspectiveCamera makeDefault />
-      <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
+      <CameraManager />
 
       <TrackingSpotLight position={[0, 5, 0]} />
       {/* <TrackingSpotLight
