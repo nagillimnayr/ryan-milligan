@@ -43,20 +43,6 @@ export const Floor = () => {
             metalness={0.25}
             roughness={0.5}
           />
-          {/* <shadowMaterial /> */}
-          {/* <MeshReflectorMaterial
-            mirror={1}
-            blur={[300, 100]}
-            resolution={2048}
-            mixBlur={1}
-            mixStrength={80}
-            roughness={1}
-            depthScale={1.2}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color='#1e1e1e'
-            metalness={0.25}
-          /> */}
         </Plane>
       </RigidBody>
     </group>
