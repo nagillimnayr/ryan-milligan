@@ -61,6 +61,7 @@ export const TrackingSpotLight = ({
       distance={50.0}
       depthBuffer={depthBuffer}
       radiusBottom={17.5}
+      opacity={0.2}
     />
   );
 };
