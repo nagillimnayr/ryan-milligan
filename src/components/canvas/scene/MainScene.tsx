@@ -37,7 +37,17 @@ export const MainScene = () => {
         distance={100}
         intensity={20}
       /> */}
-      <directionalLight ref={dirLightRef} position={[10, 10, 10]} castShadow />
+      <directionalLight
+        ref={dirLightRef}
+        position={[10, 10, 10]}
+        castShadow
+        shadow-camera-near={1e-3}
+        shadow-camera-far={1e4}
+        shadow-camera-bottom={-20}
+        shadow-camera-top={20}
+        shadow-camera-left={-20}
+        shadow-camera-right={20}
+      />
       <ambientLight intensity={0.2} color={'#3a74f7'} />
       <Name3D position={[-5, 0, -5]} rotation-y={degToRad(45)}>
         RYAN
