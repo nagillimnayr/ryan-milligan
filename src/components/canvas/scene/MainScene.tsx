@@ -20,9 +20,9 @@ import { Ball } from '../Ball';
 import { PI_OVER_THREE } from '@/helpers/constants';
 
 export const MainScene = () => {
-  // const dirLightRef = useRef<DirectionalLight>(null!);
+  const dirLightRef = useRef<DirectionalLight>(null!);
   const pointLightRef = useRef<PointLight>(null!);
-  // useHelper(dirLightRef, DirectionalLightHelper);
+  useHelper(dirLightRef, DirectionalLightHelper, 1, 'red');
   useHelper(pointLightRef, PointLightHelper, 1, 'red');
   return (
     <>
@@ -36,7 +36,7 @@ export const MainScene = () => {
         distance={100}
         intensity={20}
       />
-
+      <directionalLight ref={dirLightRef} position={[10, 10, 10]} castShadow />
       <ambientLight intensity={0.2} color={'#3a74f7'} />
       <Name3D position={[-5, 0, -5]} rotation-y={degToRad(45)}>
         RYAN
