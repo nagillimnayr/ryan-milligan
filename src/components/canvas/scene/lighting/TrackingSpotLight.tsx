@@ -53,10 +53,10 @@ export const TrackingSpotLight = ({
       color={color as THREE.Color & (string | number)}
       castShadow
       // volumetric
-      penumbra={1}
-      intensity={20}
+      penumbra={0}
+      intensity={10}
       angle={ANGLE}
-      anglePower={6}
+      anglePower={2}
       attenuation={50}
       distance={50.0}
       depthBuffer={depthBuffer}
