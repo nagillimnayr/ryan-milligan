@@ -29,7 +29,8 @@ export const TrackingSpotLight = ({
     raycaster.setFromCamera(pointer, camera);
     raycaster.ray.intersectPlane(PLANE, _vec);
     _vec.x = clamp(_vec.x, -10, 10);
-    _vec.y = clamp(_vec.y, -10, 10);
+    _vec.z = clamp(_vec.z, -10, 10);
+    _vec.y = 0;
     spotLight.current.target.position.lerp(_vec, delta);
   });
   return (
@@ -43,7 +44,7 @@ export const TrackingSpotLight = ({
       angle={0.45}
       anglePower={4}
       attenuation={5}
-      distance={50.0}
+      distance={100.0}
       depthBuffer={depthBuffer}
     />
   );
