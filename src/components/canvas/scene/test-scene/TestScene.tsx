@@ -122,9 +122,9 @@ export const TestScene = () => {
         intensity={100}
       /> */}
 
-      <TrackingSpotLight position={[0, 5, 5]} />
+      <TrackingSpotLight position={[2, 5, 5]} />
 
-      {CUBES.map((cube, index) => (
+      {/* {CUBES.map((cube, index) => (
         <Cube
           key={cube.key}
           position={cube.position as THREE.Vector3Tuple}
@@ -132,7 +132,8 @@ export const TestScene = () => {
           scale={cube.scale}
           color={cube.color}
         />
-      ))}
+      ))} */}
+      <Cube color={'orange'} />
     </>
   );
 };
