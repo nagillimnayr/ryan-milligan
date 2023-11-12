@@ -23,7 +23,7 @@ export const MainScene = () => {
   // const dirLightRef = useRef<DirectionalLight>(null!);
   const pointLightRef = useRef<PointLight>(null!);
   // useHelper(dirLightRef, DirectionalLightHelper);
-  useHelper(pointLightRef, PointLightHelper);
+  useHelper(pointLightRef, PointLightHelper, 1, 'red');
   return (
     <>
       <PerspectiveCamera makeDefault />
