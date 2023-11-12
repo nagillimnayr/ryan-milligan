@@ -14,31 +14,23 @@ export const Floor = () => {
     texture.wrapT = THREE.RepeatWrapping;
   });
 
-  const [args, cuboidArgs]: [
-    [number, number, number, number],
-    [number, number, number],
-  ] = useMemo(() => {
-    const width = 25;
-    const height = 25;
-    return [
-      [width, height, 1, 1],
-      [width / 2, height / 2, 0.01],
-    ];
+  const args: [number, number, number] = useMemo(() => {
+    const width = 200;
+    const height = 0.1;
+    const depth = 200;
+    return [width, height, depth];
   }, []);
   return (
     <group>
-      {/* <Grid args={args} position-y={0.01} /> */}
-
-      <RigidBody>
-        <Plane rotation-x={-PI_OVER_TWO} args={args} receiveShadow>
-          <meshStandardMaterial
-            // shadowSide={THREE.FrontSide}
+      <RigidBody type={'fixed'} colliders={'cuboid'} name={'floor-rigidbody'}>
+        <Box args={args} receiveShadow name={'floor'}>
+          {/* <meshStandardMaterial
             map={checkerTexture}
             side={THREE.DoubleSide}
-          />
-        </Plane>
+          /> */}
+          <shadowMaterial />
+        </Box>
       </RigidBody>
-      <CuboidCollider position={[0, 0, 0]} args={cuboidArgs} />
     </group>
   );
 };
