@@ -42,15 +42,17 @@ export const MainScene = () => {
       <CameraControls makeDefault distance={15} polarAngle={PI_OVER_THREE} />
 
       <TrackingSpotLight
+        position={[0, 5, 0]}
+        // depthBuffer={depthBuffer}
+      />
+      {/* <TrackingSpotLight
         position={[8, 5, -5]}
         color='#0c8cbf'
-        // depthBuffer={depthBuffer}
       />
       <TrackingSpotLight
         position={[-8, 5, -5]}
         color='#b00c3f'
-        // depthBuffer={depthBuffer}
-      />
+      /> */}
 
       <ambientLight intensity={0.015} color={'#3a74f7'} />
 
