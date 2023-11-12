@@ -1,4 +1,10 @@
-import { Box, Grid, Plane, useTexture } from '@react-three/drei';
+import {
+  Box,
+  Grid,
+  MeshReflectorMaterial,
+  Plane,
+  useTexture,
+} from '@react-three/drei';
 import { useEffect, useMemo } from 'react';
 import { PI_OVER_TWO } from '@/helpers/constants';
 import { CuboidCollider, RigidBody } from '@react-three/rapier';
@@ -32,8 +38,23 @@ export const Floor = () => {
           {/* <meshStandardMaterial
             map={checkerTexture}
             side={THREE.DoubleSide}
+            metalness={1}
+            roughness={0.5}
           /> */}
-          <shadowMaterial />
+          {/* <shadowMaterial /> */}
+          <MeshReflectorMaterial
+            mirror={1}
+            blur={[300, 100]}
+            resolution={2048}
+            mixBlur={1}
+            mixStrength={80}
+            roughness={1}
+            depthScale={1.2}
+            minDepthThreshold={0.4}
+            maxDepthThreshold={1.4}
+            color='#050505'
+            metalness={0.5}
+          />
         </Plane>
       </RigidBody>
     </group>
