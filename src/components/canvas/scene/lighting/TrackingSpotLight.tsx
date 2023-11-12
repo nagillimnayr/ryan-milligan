@@ -4,9 +4,13 @@ import { SpotLightProps, useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { clamp } from 'three/src/math/MathUtils';
+import { useEventListener } from '@react-hooks-library/core';
 
 const PLANE = new THREE.Plane(Y_AXIS, 0);
-const _vec = new THREE.Vector3();
+const _targetPos = new THREE.Vector3();
+const _lightPos = new THREE.Vector3();
+
+const ANGLE = 0.35;
 
 type TrackingSpotLightProps = Pick<SpotLightProps, 'position'> & {
   color?: THREE.ColorRepresentation;
@@ -17,35 +21,56 @@ export const TrackingSpotLight = ({
   color,
   depthBuffer,
 }: TrackingSpotLightProps) => {
-  const spotLight = useRef<THREE.SpotLight>(null!);
+  const spotLightRef = useRef<THREE.SpotLight>(null!);
+  const coneRef = useRef<THREE.Mesh>(null!);
 
   useEffect(() => {
-    spotLight.current.lookAt(_vec.set(0, 0, 0));
+    spotLightRef.current.lookAt(_targetPos.set(0, 0, 0));
   }, []);
 
   // useHelper(spotLight, THREE.SpotLightHelper, 'white');
   useFrame((state, delta) => {
     const { pointer, raycaster, camera } = state;
+    const spotLight = spotLightRef.current;
+
     raycaster.setFromCamera(pointer, camera);
-    raycaster.ray.intersectPlane(PLANE, _vec);
-    _vec.x = clamp(_vec.x, -10, 10);
-    _vec.z = clamp(_vec.z, -10, 10);
-    _vec.y = 0;
-    spotLight.current.target.position.lerp(_vec, delta);
+    raycaster.ray.intersectPlane(PLANE, _targetPos);
+    _targetPos.x = clamp(_targetPos.x, -10, 10);
+    _targetPos.z = clamp(_targetPos.z, -10, 10);
+    _targetPos.y = 0;
+    spotLight.target.position.lerp(_targetPos, delta);
   });
+
+  useEventListener('keydown', (event) => {
+    const spotLight = spotLightRef.current;
+    switch (event.code) {
+      case 'Space': {
+        console.log(spotLight);
+        console.log(spotLight.children);
+      }
+    }
+  });
+
+  useEffect(() => {
+    const spotLight = spotLightRef.current;
+    coneRef.current = spotLight.children[0] as THREE.Mesh;
+  }, []);
+
   return (
     <SpotLight
-      ref={spotLight}
+      ref={spotLightRef}
       position={position}
       color={color as THREE.Color & (string | number)}
       castShadow
+      // volumetric
       penumbra={1}
       intensity={20}
-      angle={0.45}
-      anglePower={4}
-      attenuation={5}
-      distance={100.0}
+      angle={ANGLE}
+      anglePower={6}
+      attenuation={50}
+      distance={50.0}
       depthBuffer={depthBuffer}
+      radiusBottom={17.5}
     />
   );
 };
