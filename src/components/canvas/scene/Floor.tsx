@@ -14,7 +14,7 @@ export const Floor = () => {
     texture.wrapT = THREE.RepeatWrapping;
   });
 
-  const args: [number, number, number] = useMemo(() => {
+  const args: [number, number, number, number] = useMemo(() => {
     const width = 200;
     const height = 200;
     return [width, height, width, height];
