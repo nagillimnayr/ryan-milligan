@@ -17,7 +17,7 @@ export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
   }, []);
   return (
     <>
-      <RigidBody colliders='false'>
+      <RigidBody>
         <Select enabled={true}>
           <Sphere castShadow receiveShadow {...props} onClick={handleClick}>
             {children}
