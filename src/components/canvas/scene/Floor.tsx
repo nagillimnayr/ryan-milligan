@@ -29,19 +29,21 @@ export const Floor = () => {
     <group>
       <RigidBody type={'fixed'} colliders={'cuboid'} name={'floor-rigidbody'}>
         {/* <Box args={args} receiveShadow name={'floor'}> */}
+        <gridHelper args={[200, 200, '#101010', '#050505']} />
+        {/* <Grid args={[200, 200, 200, 200]} cellColor={'white'} receiveShadow /> */}
         <Plane
           args={args}
           receiveShadow
           name={'floor'}
           rotation-x={-PI_OVER_TWO}
         >
-          {/* <meshStandardMaterial
-            map={checkerTexture}
+          <meshStandardMaterial
+            // map={checkerTexture}
             side={THREE.DoubleSide}
-            metalness={1}
+            metalness={0.25}
             roughness={0.5}
-          /> */}
-          <shadowMaterial />
+          />
+          {/* <shadowMaterial /> */}
           {/* <MeshReflectorMaterial
             mirror={1}
             blur={[300, 100]}
@@ -52,8 +54,8 @@ export const Floor = () => {
             depthScale={1.2}
             minDepthThreshold={0.4}
             maxDepthThreshold={1.4}
-            color='#050505'
-            metalness={0.5}
+            color='#1e1e1e'
+            metalness={0.25}
           /> */}
         </Plane>
       </RigidBody>
