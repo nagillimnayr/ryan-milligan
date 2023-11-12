@@ -10,7 +10,7 @@ export const CameraManager = () => {
         makeDefault
         distance={15}
         polarAngle={PI_OVER_THREE}
-        maxDistance={20}
+        maxDistance={40}
         minDistance={1}
         maxPolarAngle={1.3}
         minPolarAngle={1e-5}
