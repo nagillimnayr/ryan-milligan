@@ -1,15 +1,25 @@
-import { Center } from '@react-three/drei';
+import {
+  Center,
+  GradientTexture,
+  MeshTransmissionMaterial,
+  Outlines,
+} from '@react-three/drei';
 import { useTheme } from 'next-themes';
 import { useSpring, animated } from '@react-spring/three';
 import { anim } from '@/helpers/react-spring-utils';
 import { useCallback, useLayoutEffect, useRef } from 'react';
-import { type Mesh, type Object3D, Plane, Vector3, Vector3Tuple } from 'three';
-import { Object3DProps, useFrame } from '@react-three/fiber';
-import { Z_AXIS } from '@/helpers/constants';
+import {
+  type Mesh,
+  type Object3D,
+  Plane,
+  Vector3,
+  type Vector3Tuple,
+  Vector2,
+} from 'three';
+import { type Object3DProps, useFrame } from '@react-three/fiber';
+import { PI_OVER_TWO, Z_AXIS } from '@/helpers/constants';
 
 const _v1 = new Vector3();
-const _lookPos = new Vector3();
-const _plane = new Plane(Z_AXIS, -2);
 
 const FONT_URL = 'fonts/Audiowide_Regular.json';
 const TEXT_COLOR_LIGHT = 'cyan';
@@ -64,7 +74,7 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
 
   return (
     <>
-      <object3D ref={pivotRef} {...props}>
+      <object3D ref={pivotRef} {...props} scale={2}>
         <Center position-y={0.5} scale-z={0.75}>
           <anim.Text3D
             ref={textRef}
@@ -82,7 +92,10 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
             onPointerLeave={handlePointerLeave}
           >
             {/* @ts-ignore */}
-            <animated.meshStandardMaterial color={spring.color} />
+            <animated.meshStandardMaterial
+            // color={spring.color}
+            ></animated.meshStandardMaterial>
+
             {children}
           </anim.Text3D>
         </Center>
