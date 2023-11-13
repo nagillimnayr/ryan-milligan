@@ -111,6 +111,7 @@ export const TestScene = () => {
     <>
       <color attach={'background'} args={['#202020']} />
       {/* <fog attach={'fog'} args={['#202020', 5, 20]} /> */}
+      <ambientLight intensity={0.05} />
       <CameraManager />
       <Floor />
 
@@ -126,11 +127,11 @@ export const TestScene = () => {
 
       {/* {CUBES.map((cube, index) => (
         <Cube
-          key={cube.key}
-          position={cube.position as THREE.Vector3Tuple}
-          rotation={cube.rotation as THREE.Vector3Tuple}
-          scale={cube.scale}
-          color={cube.color}
+        key={cube.key}
+        position={cube.position as THREE.Vector3Tuple}
+        rotation={cube.rotation as THREE.Vector3Tuple}
+        scale={cube.scale}
+        color={cube.color}
         />
       ))} */}
       <Cube color={'orange'} />
