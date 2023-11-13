@@ -12,10 +12,12 @@ export const Brick = (props: BrickProps) => {
     return [width, height, depth];
   }, []);
   return (
-    <RigidBody colliders={'hull'}>
-      <RoundedBox args={args}>
-        <meshStandardMaterial />
-      </RoundedBox>
-    </RigidBody>
+    <group {...props}>
+      <RigidBody colliders={'hull'}>
+        <RoundedBox args={args} position-y={1} castShadow receiveShadow>
+          <meshStandardMaterial />
+        </RoundedBox>
+      </RigidBody>
+    </group>
   );
 };
