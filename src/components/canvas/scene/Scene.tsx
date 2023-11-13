@@ -9,7 +9,7 @@ type SceneProps = Omit<CanvasProps, 'children'>;
 export default function Scene({ ...props }: SceneProps) {
   // Everything defined in here will persist between route changes, only children are swapped
   return (
-    <Canvas {...props} shadows>
+    <Canvas {...props} shadows gl={{ preserveDrawingBuffer: true }}>
       <SceneProviders>
         {/* @ts-ignore */}
         <r3f.Out />
