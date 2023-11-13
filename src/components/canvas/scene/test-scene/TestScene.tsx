@@ -12,97 +12,6 @@ import { Brick } from '../../brick/Brick';
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
 
-const CUBES = [
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'cyan',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'red',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'blue',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'pink',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'orange',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'green',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'indigo',
-  },
-  {
-    key: generateUUID(),
-    position: [
-      Math.random() * RAND_POS_SCALAR,
-      0,
-      Math.random() * RAND_POS_SCALAR,
-    ],
-    rotation: [0, Math.random() * TWO_PI, 0],
-    scale: Math.random() * RAND_SCALE_SCALAR,
-    color: 'purple',
-  },
-];
-
 export const TestScene = () => {
   const pointLightRef = useRef<THREE.PointLight>(null!);
 
@@ -125,17 +34,6 @@ export const TestScene = () => {
       /> */}
 
       <TrackingSpotLight position={[2, 5, 5]} />
-
-      {/* {CUBES.map((cube, index) => (
-        <Cube
-        key={cube.key}
-        position={cube.position as THREE.Vector3Tuple}
-        rotation={cube.rotation as THREE.Vector3Tuple}
-        scale={cube.scale}
-        color={cube.color}
-        />
-      ))} */}
-      <Cube color={'orange'} />
 
       <Brick position-x={3} />
     </>
