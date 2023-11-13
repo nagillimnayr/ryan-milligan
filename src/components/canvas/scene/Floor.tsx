@@ -11,14 +11,17 @@ import { CuboidCollider, RigidBody } from '@react-three/rapier';
 import * as THREE from 'three';
 
 export const Floor = () => {
-  const checkerTexture = useTexture('textures/checkerboard.jpg', (texture) => {
-    if (Array.isArray(texture)) return;
-    texture.center.set(0.5, 0.5);
-    const rep = 3;
-    texture.repeat.set(rep, rep);
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.wrapT = THREE.RepeatWrapping;
-  });
+  const checkerTexture = useTexture(
+    '/assets/textures/checkerboard.jpg',
+    (texture) => {
+      if (Array.isArray(texture)) return;
+      texture.center.set(0.5, 0.5);
+      const rep = 3;
+      texture.repeat.set(rep, rep);
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+    },
+  );
 
   const args: [number, number, number, number] = useMemo(() => {
     const width = 200;
