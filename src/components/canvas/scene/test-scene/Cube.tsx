@@ -8,7 +8,7 @@ type CubeProps = Pick<Object3DProps, 'position' | 'rotation' | 'scale'> & {
 export const Cube = ({ color, ...props }: CubeProps) => {
   return (
     <object3D {...props}>
-      <Box position-y={0.5}>
+      <Box position-y={0.5} castShadow receiveShadow>
         <meshStandardMaterial color={color} />
       </Box>
     </object3D>
