@@ -5,7 +5,7 @@
 # Get directory path from argument.
 dir_path=$1
 
-output_path="../src/components/canvas/gltfsx/$2/"
+output_path="../src/components/canvas/gltfjsx/$2/"
 
 model_path="../public/assets/models"
 
