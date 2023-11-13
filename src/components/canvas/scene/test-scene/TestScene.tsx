@@ -7,6 +7,7 @@ import { TrackingSpotLight } from '../lighting/TrackingSpotLight';
 import { Cube } from './Cube';
 import { TWO_PI } from '@/helpers/constants';
 import { generateUUID } from 'three/src/math/MathUtils';
+import { Brick } from '../../brick/Brick';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
@@ -135,6 +136,8 @@ export const TestScene = () => {
         />
       ))} */}
       <Cube color={'orange'} />
+
+      <Brick position-x={3} />
     </>
   );
 };
