@@ -1,0 +1,6 @@
+{
+  "$schema": "https://triplex.dev/config.schema.json",
+  "components": ["../src/components/canvas/**/*.tsx"],
+  "files": ["../src/components/canvas/**/*.tsx"],
+  "provider": "../src/components/providers/SceneProviders.tsx"
+}
