@@ -2,7 +2,7 @@ import { Suspense, type PropsWithChildren } from 'react';
 import { Physics } from '@react-three/rapier';
 import { SelectionProvider } from './SelectionProvider';
 
-export const SceneProviders = ({ children }: PropsWithChildren) => {
+export default function SceneProviders({ children }: PropsWithChildren) {
   return (
     <>
       <Suspense>
@@ -12,4 +12,4 @@ export const SceneProviders = ({ children }: PropsWithChildren) => {
       </Suspense>
     </>
   );
-};
+}

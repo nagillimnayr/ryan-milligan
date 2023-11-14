@@ -20,13 +20,13 @@ import {
 } from 'three';
 import { Floor } from './Floor';
 import { degToRad } from 'three/src/math/MathUtils';
-import { Ball } from '../Ball';
+import { Ball } from '../ball/Ball';
 import { PI, PI_OVER_THREE, PI_OVER_TWO } from '@/helpers/constants';
 import { Pendulum } from '../pendulum/Pendulum';
 import { TrackingSpotLight } from './lighting/TrackingSpotLight';
 import { useKeyboard } from '@/helpers/hooks/useKeyboard';
 import { CameraManager } from './CameraManager';
-import { DragonModel } from '@/components/models/DragonModel';
+import { DragonModel } from '@/components/canvas/models/DragonModel';
 
 export const MainScene = () => {
   const dirLightRef = useRef<DirectionalLight>(null!);
