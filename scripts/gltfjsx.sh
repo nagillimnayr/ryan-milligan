@@ -3,9 +3,9 @@
 # Auto-generate gltfsx files.
 
 # Get directory path from argument.
-dir_path=$1
+dir_path="./$1"
 
-output_path="../src/components/canvas/gltfjsx/$2/"
+output_path="../src/components/canvas/gltfjsx/$1"
 
 model_path="../public/assets/models"
 
