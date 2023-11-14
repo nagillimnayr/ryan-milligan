@@ -9,6 +9,9 @@ import { useEventListener } from '@react-hooks-library/core';
 const PLANE = new THREE.Plane(Y_AXIS, 0);
 const _targetPos = new THREE.Vector3();
 const _lightPos = new THREE.Vector3();
+const _direction = new THREE.Vector3();
+
+const LOOK_RADIUS = 15;
 
 const ANGLE = 0.35;
 
@@ -33,17 +36,29 @@ export const TrackingSpotLight = ({
     const { pointer, raycaster, camera } = state;
     const spotLight = spotLightRef.current;
 
+    spotLight.getWorldPosition(_lightPos);
+
     raycaster.setFromCamera(pointer, camera);
     raycaster.ray.intersectPlane(PLANE, _targetPos);
-    _targetPos.x = clamp(_targetPos.x, -10, 10);
-    _targetPos.z = clamp(_targetPos.z, -10, 10);
+
     _targetPos.y = 0;
+    _lightPos.y = 0;
+
+    _direction.subVectors(_targetPos, _lightPos);
+    const distance = _direction.length();
+    _direction.divideScalar(distance);
+
+    _targetPos.copy(_lightPos);
+    _targetPos.addScaledVector(_direction, Math.min(distance, LOOK_RADIUS));
+
+    spotLight.target.position.y = 0;
     spotLight.target.position.lerp(_targetPos, delta);
   });
 
   useEffect(() => {
     const spotLight = spotLightRef.current;
     coneRef.current = spotLight.children[0] as THREE.Mesh;
+    spotLight.target.position.set(0, 0, 0);
   }, []);
 
   return (

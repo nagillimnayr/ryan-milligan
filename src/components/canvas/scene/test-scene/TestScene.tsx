@@ -33,7 +33,7 @@ export const TestScene = () => {
         intensity={100}
       /> */}
 
-      <TrackingSpotLight position={[2, 5, 5]} />
+      <TrackingSpotLight position={[2, 20, 5]} />
 
       <Brick position-x={3} />
     </>
