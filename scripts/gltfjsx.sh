@@ -45,6 +45,7 @@ for file in ./*; do
     # Edit path to assets in the public directory.
     # -i to modify in place.
     sed -i "s/useGLTF('/useGLTF('assets\/models/" "$file"
+    sed -i "s/preload('/preload('assets\/models/" "$file"
 
     file_name="$(basename -- "$file")"
     echo "$file_name"
