@@ -72,43 +72,36 @@ def main():
     model_name = match.group(1)
     print('ext:', ext)
     print('model name:', model_name)
-    if ext == './b' or ext == '.gltf':
+    if ext == '.glb' or ext == '.gltf':
+      subprocess.run(['mkdir', '-p', 'model_path'])
       # Move file into model directory.
-      subprocess.run(['mv', file_name, f'{model_path}{file_name}'])
-      
-      
-      
+      subprocess.run(['mv', '-f', file_name, f'{model_path}{file_name}'])
     elif ext == '.tsx':
       # Edit path to assets in the public directory.
       # -i to modify in place.
-      subprocess.run(['perl', '-i', '-e', "s/(?<useGLTF\()'/'assets\/models/", file_name])
-      subprocess.run(['perl', '-i', '-e', "s/(?<preload\()'/'assets\/models/", file_name])
-      # subprocess.run(['sed', '-i', r"s/useGLTF('/useGLTF('assets\/models/", file_name], shell=True)
-      # subprocess.run(['sed', '-i', r"s/preload('/preload('assets\/models/", file_name], shell=True)
-      # subprocess.run(r"sed -i -e s/useGLTF(\'/useGLTF(\'assets\/models/ " + file_name, shell=True)
-      # subprocess.run(r"sed -i -e s/preload(\'/preload(\'assets\/models/ " + file_name, shell=True)
       
       file_str = ""
       print('file name:', file_name)
       with open(file_name, "rt") as f:
         file_str = f.read()
-        file_str = re.sub("useGLTF('", "useGLTF('assets/models", file_str)
-        file_str = re.sub("preload('", "preload('assets/models", file_str)
-        file_str = re.sub("preload('", "preload('assets/models", file_str)
+        file_str = re.sub("useGLTF\('", "useGLTF('assets/models", file_str)
+        file_str = re.sub("preload\('", "preload('assets/models", file_str)
+        # Change component name.
+        file_str = re.sub("Model\(", f"{model_name}(", file_str)
       
       with open(file_name, "wt") as f:
         f.write(file_str)
       
       
-      
-      # Change component name.
-      pattern = r's/(?<=\s)Model/' + model_name + r'/'
-      subprocess.run(['perl', '-i', '-e', pattern, file_name])
+     
+      # Create directory.
+      new_dir = output_path + dir_name 
+      subprocess.run(['mkdir', '-p', new_dir])
       
       # Move file.
-      new_path = output_path + dir_name + file_name
+      new_path = new_dir + file_name
       # -f to force overwrite.
-      subprocess.run(['mv', file_name, new_path])
+      subprocess.run(['mv', '-f', file_name, new_path])
 
   
   
