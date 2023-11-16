@@ -29,9 +29,12 @@ for file in "$dir_path"/*; do
   # Only want gltf or glb files.
   if [[ ("$file" == *.glb) || ("$file" == *.gltf) ]]; then
     echo "$file"
+    new_filename="$(echo "$file" | perl -p -e "s/[^\/\w\-](?!gl|\/)//g")"
+    mv "$file" "$new_filename"
+    echo "New file name: $new_filename"
     # file_name="$(basename -- "$file")"
     # echo "$file_name"
-    npx gltfjsx@6.2.13 "$file" -T -t -s -k
+    npx gltfjsx@6.2.13 "$new_filename" -T -t -s -k
   fi
 done
 
@@ -48,10 +51,10 @@ for file in ./*; do
     sed -i "s/preload('/preload('assets\/models/" "$file"
 
     file_name="$(basename -- "$file")"
-    echo "$file_name"
+    echo "FIle name: $file_name"
     #  Remove extension from file name to get name of model.
-    model_name="$(echo "$file_name" | sed -n "s/.tsx//p")"
-    echo "$model_name"
+    model_name="$(echo "$file_name" | perl -p -e 's/$\.tsx//p')"
+    echo "Model name: $model_name"
 
     # Rename component. -i to modify in place.
     perl -pi -e "s/(?<=\s)Model/$model_name/" "$file"
