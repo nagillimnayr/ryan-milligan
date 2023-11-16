@@ -9,14 +9,14 @@ output_path="../src/components/canvas/gltfjsx/$1"
 
 model_path="../public/assets/models"
 
-if [ ! -d "$dir_path" ]; then
+if [[ ! -d "$dir_path" ]]; then
   echo "$dir_path is Not a directory!"
-  npx gltfjsx@6.2.13 "$dir_path" -T -t -s
+  # npx gltfjsx@6.2.13 "$dir_path" -T -t -s
   exit 1
 fi
 
 mkdir -p "$output_path"
-if [ ! -d "$output_path" ]; then
+if [[ ! -d "$output_path" ]]; then
   echo "$output_path is Not a directory!"
   exit 1
 fi
@@ -29,12 +29,13 @@ for file in "$dir_path"/*; do
   # Only want gltf or glb files.
   if [[ ("$file" == *.glb) || ("$file" == *.gltf) ]]; then
     echo "$file"
-    new_filename="$(echo "$file" | perl -p -e "s/[^\/\w\-](?!gl|\/)//g")"
-    mv "$file" "$new_filename"
-    echo "New file name: $new_filename"
+    # new_filename="$(echo "$file" | perl -p -e "s/[^\/\w\-](?!gl|\/)//g")"
+    # mv "$file" "$new_filename"
+    # echo "New file name: $new_filename"
     # file_name="$(basename -- "$file")"
     # echo "$file_name"
-    npx gltfjsx@6.2.13 "$new_filename" -T -t -s -k
+    # npx gltfjsx@6.2.13 "$new_filename" -T -t -s -k
+    npx gltfjsx@6.2.13 "$file" -T -t -s -k
   fi
 done
 
@@ -51,7 +52,7 @@ for file in ./*; do
     sed -i "s/preload('/preload('assets\/models/" "$file"
 
     file_name="$(basename -- "$file")"
-    echo "FIle name: $file_name"
+    echo "File name: $file_name"
     #  Remove extension from file name to get name of model.
     model_name="$(echo "$file_name" | perl -p -e 's/$\.tsx//p')"
     echo "Model name: $model_name"
