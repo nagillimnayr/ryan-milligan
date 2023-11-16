@@ -21,7 +21,8 @@ import { PI_OVER_TWO, Z_AXIS } from '@/helpers/constants';
 
 const _v1 = new Vector3();
 
-const FONT_URL = 'fonts/Audiowide_Regular.json';
+// const FONT_URL = 'fonts/Audiowide_Regular.json';
+const FONT_URL = 'fonts/Roboto_Regular.json';
 const TEXT_COLOR_LIGHT = 'cyan';
 const TEXT_COLOR_DARK = 'white';
 
@@ -75,30 +76,32 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   return (
     <>
       <object3D ref={pivotRef} {...props} scale={2}>
-        <Center position-y={0.5} scale-z={0.75}>
-          <anim.Text3D
-            ref={textRef}
-            font={FONT_URL}
-            letterSpacing={0.05}
-            height={1}
-            castShadow
-            receiveShadow
-            // bevelEnabled
-            // bevelSize={0.005}
-            // bevelSegments={36}
-            // bevelThickness={0.02}
-            curveSegments={64}
-            onPointerEnter={handlePointerEnter}
-            onPointerLeave={handlePointerLeave}
-          >
-            {/* @ts-ignore */}
-            <animated.meshStandardMaterial
-            // color={spring.color}
-            ></animated.meshStandardMaterial>
+        <object3D scale-y={0.5}>
+          <Center position-y={0.5} rotation-x={-PI_OVER_TWO}>
+            <anim.Text3D
+              ref={textRef}
+              font={FONT_URL}
+              letterSpacing={0.05}
+              height={1}
+              castShadow
+              receiveShadow
+              // bevelEnabled
+              // bevelSize={0.005}
+              // bevelSegments={36}
+              // bevelThickness={0.02}
+              curveSegments={64}
+              onPointerEnter={handlePointerEnter}
+              onPointerLeave={handlePointerLeave}
+            >
+              {/* @ts-ignore */}
+              <animated.meshStandardMaterial
+              // color={spring.color}
+              ></animated.meshStandardMaterial>
 
-            {children}
-          </anim.Text3D>
-        </Center>
+              {children}
+            </anim.Text3D>
+          </Center>
+        </object3D>
       </object3D>
     </>
   );

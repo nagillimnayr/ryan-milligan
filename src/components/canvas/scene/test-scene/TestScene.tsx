@@ -8,6 +8,7 @@ import { Cube } from './Cube';
 import { TWO_PI } from '@/helpers/constants';
 import { generateUUID } from 'three/src/math/MathUtils';
 import { Brick } from '@/components/canvas/brick/Brick';
+import { Name3D } from '../../Name/Name3D';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
@@ -47,7 +48,7 @@ export const TestScene = () => {
         castShadow
         position-y={1}
         position-z={0}
-        position-x={-2}
+        position-x={-8}
         distance={100}
         intensity={10}
       />
@@ -55,6 +56,10 @@ export const TestScene = () => {
       <TrackingSpotLight position={[2, 20, 5]} />
 
       <Brick position-x={3} />
+
+      <axesHelper scale={2} position-y={10} />
+
+      <Name3D position-z={-5}>{'RYAN'}</Name3D>
     </>
   );
 };
