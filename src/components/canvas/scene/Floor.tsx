@@ -32,7 +32,7 @@ export const Floor = () => {
     <group>
       <RigidBody type={'fixed'} colliders={'cuboid'} name={'floor-rigidbody'}>
         {/* <Box args={args} receiveShadow name={'floor'}> */}
-        <gridHelper args={[200, 200, '#101010', '#050505']} />
+        {/* <gridHelper args={[200, 200, '#101010', '#050505']} /> */}
         {/* <Grid args={[200, 200, 200, 200]} cellColor={'white'} receiveShadow /> */}
         <Plane
           args={args}
