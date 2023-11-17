@@ -58,6 +58,7 @@
     "@types/fs-extra": "^11.0.1",
     "@use-gesture/react": "^10.3.0",
     "@vercel/analytics": "^1.1.1",
+    "@xstate/react": "^3.2.2",
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
@@ -102,6 +103,7 @@
     "tunnel-rat": "^0.1.2",
     "unified": "^10.1.2",
     "valtio": "^1.10.6",
+    "xstate": "^4.38.3",
     "zod": "^3.21.4"
   },
   "devDependencies": {
