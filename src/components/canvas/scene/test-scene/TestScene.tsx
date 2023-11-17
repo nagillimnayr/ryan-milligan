@@ -9,15 +9,16 @@ import { TWO_PI } from '@/helpers/constants';
 import { generateUUID } from 'three/src/math/MathUtils';
 import { Brick } from '@/components/canvas/brick/Brick';
 import { Name3D } from '../../text/Name3D';
+import { useKeyboard } from '@/helpers/hooks/useKeyboard';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
 
 export const TestScene = () => {
   const pointLightRef = useRef<THREE.PointLight>(null!);
+  useKeyboard();
 
   useHelper(pointLightRef, THREE.PointLightHelper, 1, 'red');
-
   return (
     <>
       <color attach={'background'} args={['#202020']} />

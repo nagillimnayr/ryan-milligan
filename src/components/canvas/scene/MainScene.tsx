@@ -33,9 +33,7 @@ export const MainScene = () => {
   const pointLightRef = useRef<PointLight>(null!);
   const spotLightRef = useRef<SpotLight>(null!);
   // useHelper(pointLightRef, PointLightHelper, 1, 'red');
-
   useKeyboard();
-
   return (
     <>
       <DragonModel />

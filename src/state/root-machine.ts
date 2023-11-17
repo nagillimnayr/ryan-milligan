@@ -2,7 +2,7 @@ import { EventDispatcher } from 'three';
 import { createMachine } from 'xstate';
 
 type RootContext = {
-  eventManager: EventDispatcher;
+  eventManager: EventDispatcher<any>;
 };
 
 export const rootMachine = createMachine({
