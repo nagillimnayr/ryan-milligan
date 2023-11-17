@@ -6,7 +6,7 @@ import { ContactLinks } from '@/components/dom/ContactLinks';
 import { trpc } from '@/helpers/trpc/trpc';
 import Link from 'next/link';
 import { Common, View } from '@/components/canvas/scene/View';
-import { Name3D } from '@/components/canvas/Name/Name3D';
+
 import { PerspectiveCamera, Sphere } from '@react-three/drei';
 import { MainScene } from '@/components/canvas/scene/MainScene';
 

@@ -7,7 +7,7 @@ import {
   AccumulativeShadows,
   useDepthBuffer,
 } from '@react-three/drei';
-import { Name3D } from '../Name/Name3D';
+import { Name3D } from '../text/Name3D';
 import { useRef } from 'react';
 import {
   DirectionalLight,

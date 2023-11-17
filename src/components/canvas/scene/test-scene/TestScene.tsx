@@ -8,7 +8,7 @@ import { Cube } from './Cube';
 import { TWO_PI } from '@/helpers/constants';
 import { generateUUID } from 'three/src/math/MathUtils';
 import { Brick } from '@/components/canvas/brick/Brick';
-import { Name3D } from '../../Name/Name3D';
+import { Name3D } from '../../text/Name3D';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
