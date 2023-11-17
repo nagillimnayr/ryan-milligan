@@ -10,6 +10,7 @@ import { generateUUID } from 'three/src/math/MathUtils';
 import { Brick } from '@/components/canvas/brick/Brick';
 import { Name3D } from '../../text/Name3D';
 import { useKeyboard } from '@/helpers/hooks/useKeyboard';
+import { Ball } from '../../ball/Ball';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
@@ -61,6 +62,8 @@ export const TestScene = () => {
       <axesHelper scale={2} position-y={10} />
 
       <Name3D position-z={-5}>{'RYAN'}</Name3D>
+
+      <Ball position-y={3} />
     </>
   );
 };
