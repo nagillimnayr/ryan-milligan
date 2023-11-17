@@ -17,30 +17,39 @@ export function useKeyboard() {
       case 'Space': {
         console.log('Polar angle:', controls.polarAngle);
         eventManager.dispatchEvent({ type: 'KEY_SPACE' });
+        break;
       }
       case 'KeyW': {
         eventManager.dispatchEvent({ type: 'KEY_W' });
+        break;
       }
       case 'KeyA': {
         eventManager.dispatchEvent({ type: 'KEY_A' });
+        break;
       }
       case 'KeyS': {
         eventManager.dispatchEvent({ type: 'KEY_S' });
+        break;
       }
       case 'KeyD': {
         eventManager.dispatchEvent({ type: 'KEY_D' });
+        break;
       }
       case 'ArrowLeft': {
         eventManager.dispatchEvent({ type: 'KEY_ARROW_LEFT' });
+        break;
       }
       case 'ArrowUp': {
         eventManager.dispatchEvent({ type: 'KEY_ARROW_UP' });
+        break;
       }
       case 'ArrowRight': {
         eventManager.dispatchEvent({ type: 'KEY_ARROW_RIGHT' });
+        break;
       }
       case 'ArrowDown': {
         eventManager.dispatchEvent({ type: 'KEY_ARROW_DOWN' });
+        break;
       }
     }
   });
