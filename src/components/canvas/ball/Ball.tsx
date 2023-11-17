@@ -39,12 +39,6 @@ export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
   const rigidBodyRef = useRef<RapierRigidBody>(null!);
   const ballRef = useRef<THREE.Mesh>(null!);
 
-  useFrame((state, delta) => {
-    const { camera } = getThree();
-    const rb = rigidBodyRef.current;
-    const ball = ballRef.current;
-  });
-
   useEffect(() => {
     const onSpace = () => {
       const { camera } = getThree();
