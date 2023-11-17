@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 import remarkGfm from 'remark-gfm';
 
+import '@storybook/addon-console';
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -8,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
+    '@storybook/addon-actions',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -18,6 +21,8 @@ const config: StorybookConfig = {
         },
       },
     },
+    'storybook-addon-pseudo-states',
+    '@storybook/addon-themes',
   ],
   framework: {
     name: '@storybook/nextjs',
