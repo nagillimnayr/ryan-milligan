@@ -93,6 +93,7 @@
     "remark-toc": "^8.0.1",
     "simplex-noise": "^4.0.1",
     "storybook-addon-pseudo-states": "^2.1.2",
+    "storybook-tailwind-dark-mode": "^1.0.22",
     "swr": "^2.2.0",
     "tailwind-merge": "^1.13.2",
     "three": "^0.158.0",
