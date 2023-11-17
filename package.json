@@ -44,6 +44,7 @@
     "@react-three/postprocessing": "^2.15.11",
     "@react-three/rapier": "^1.1.2",
     "@react-three/rapier-addons": "^3.0.2",
+    "@storybook/addon-actions": "^7.5.3",
     "@storybook/addon-themes": "^7.5.3",
     "@storybook/manager-api": "^7.5.3",
     "@storybook/theming": "^7.5.3",
