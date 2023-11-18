@@ -1,9 +1,24 @@
-import { PropsWithChildren, createContext } from 'react';
-import { createActorContext } from '@xstate/react';
+import { PropsWithChildren, createContext, useMemo } from 'react';
+import { createActorContext, useInterpret } from '@xstate/react';
 import { rootMachine } from '@/state/root-machine';
+import { ActorRefFrom } from 'xstate';
 
-export const MachineContext = createActorContext(rootMachine);
+type MachineContextType = {
+  rootActor: ActorRefFrom<typeof rootMachine>;
+};
+export const MachineContext = createContext<MachineContextType>(null!);
 
 export const MachineProvider = ({ children }: PropsWithChildren) => {
-  return <MachineContext.Provider>{children}</MachineContext.Provider>;
+  const rootActor = useInterpret(rootMachine);
+
+  const context: MachineContextType = useMemo(() => {
+    return {
+      rootActor: rootActor,
+    };
+  }, [rootActor]);
+  return (
+    <MachineContext.Provider value={context}>
+      {children}
+    </MachineContext.Provider>
+  );
 };

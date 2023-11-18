@@ -11,10 +11,11 @@ import {
 } from '@react-three/rapier';
 import * as THREE from 'three';
 import { Select } from '@react-three/postprocessing';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { MachineContext } from '@/components/dom/providers/machine-provider';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Y_AXIS, Y_AXIS_NEG } from '@/helpers/constants';
+import { useSelector } from '@xstate/react';
 
 const _worldPos = new THREE.Vector3();
 const _camDirection = new THREE.Vector3();
@@ -33,7 +34,8 @@ export type BallProps = ShapeProps<typeof THREE.SphereGeometry> & {
   color?: THREE.ColorRepresentation;
 };
 export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
-  const { eventManager } = MachineContext.useSelector(({ context }) => context);
+  const { rootActor } = useContext(MachineContext);
+  const { eventManager } = useSelector(rootActor, ({ context }) => context);
   const getThree = useThree(({ get }) => get);
 
   const rigidBodyRef = useRef<RapierRigidBody>(null!);
