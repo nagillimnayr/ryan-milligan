@@ -5,21 +5,24 @@ type RootContext = {
   eventManager: EventDispatcher<any>;
 };
 
-export const rootMachine = createMachine({
-  predictableActionArguments: true,
-  schema: {
-    context: {} as RootContext,
+export const rootMachine = createMachine(
+  {
+    predictableActionArguments: true,
+    schema: {
+      context: {} as RootContext,
+    },
+    tsTypes: {} as import('./root-machine.typegen').Typegen0,
+
+    id: 'root-machine',
+
+    context: () => ({
+      eventManager: new EventDispatcher<any>(),
+    }),
+
+    initial: 'idle',
+    states: {
+      idle: {},
+    },
   },
-  tsTypes: {} as import('./root-machine.typegen').Typegen0,
-
-  id: 'root-machine',
-
-  context: () => ({
-    eventManager: new EventDispatcher<any>(),
-  }),
-
-  initial: 'idle',
-  states: {
-    idle: {},
-  },
-});
+  {},
+);
