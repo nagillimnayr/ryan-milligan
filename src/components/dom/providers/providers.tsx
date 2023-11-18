@@ -8,11 +8,11 @@ type ProviderProps = {
 };
 export default function Providers({ children }: ProviderProps) {
   return (
-    <MachineProvider>
+    <>
       <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-        {children}
-        <Analytics />
+        <MachineProvider>{children}</MachineProvider>
       </ThemeProvider>
-    </MachineProvider>
+      <Analytics />
+    </>
   );
 }
