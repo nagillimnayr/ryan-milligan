@@ -2,10 +2,13 @@ import { MachineContext } from '@/components/dom/providers/machine-provider';
 import { useEventListener } from '@react-hooks-library/core';
 import { CameraControls } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import { useSelector } from '@xstate/react';
+import { useContext } from 'react';
 
 export function useKeyboard() {
   const getThree = useThree(({ get }) => get);
-  const { eventManager } = MachineContext.useSelector(({ context }) => context);
+  const { rootActor } = useContext(MachineContext);
+  const { eventManager } = useSelector(rootActor, ({ context }) => context);
 
   useEventListener('keydown', (event) => {
     const { camera } = getThree();
