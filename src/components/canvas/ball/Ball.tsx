@@ -125,12 +125,7 @@ export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
       >
         <Sphere ref={ballRef} castShadow receiveShadow {...props}>
           {children}
-          {/* <meshStandardMaterial color={color} /> */}
-          <MeshTransmissionMaterial
-            color={color}
-            distortionScale={0.5}
-            temporalDistortion={0.0}
-          />
+          <meshStandardMaterial color={color} />
         </Sphere>
         {/* <BallCollider args={[1]} /> */}
       </RigidBody>
