@@ -15,7 +15,7 @@ export const rootMachine = createMachine({
   id: 'root-machine',
 
   context: () => ({
-    eventManager: new EventDispatcher(),
+    eventManager: new EventDispatcher<any>(),
   }),
 
   initial: 'idle',
