@@ -9,7 +9,7 @@ type MachineContextType = {
 export const MachineContext = createContext<MachineContextType>(null!);
 
 export const MachineProvider = ({ children }: PropsWithChildren) => {
-  const rootActor = useInterpret(rootMachine);
+  const rootActor = useInterpret(rootMachine, { id: 'root-machine' });
 
   const context: MachineContextType = useMemo(() => {
     return {
