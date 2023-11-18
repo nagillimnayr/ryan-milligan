@@ -1,10 +1,10 @@
 import { PropsWithChildren, createContext, useMemo } from 'react';
 import { createActorContext, useInterpret } from '@xstate/react';
 import { rootMachine } from '@/state/root-machine';
-import { ActorRefFrom } from 'xstate';
+import { InterpreterFrom } from 'xstate';
 
 type MachineContextType = {
-  rootActor: ActorRefFrom<typeof rootMachine>;
+  rootActor: InterpreterFrom<typeof rootMachine>;
 };
 export const MachineContext = createContext<MachineContextType>(null!);
 
