@@ -69,7 +69,7 @@ export const TrackingSpotLight = ({
       castShadow
       // volumetric
       penumbra={0}
-      intensity={10}
+      intensity={100}
       angle={ANGLE}
       anglePower={5}
       attenuation={50}
