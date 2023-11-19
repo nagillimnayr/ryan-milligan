@@ -34,8 +34,10 @@ export type BallProps = ShapeProps<typeof THREE.SphereGeometry> & {
   color?: THREE.ColorRepresentation;
 };
 export const Ball = ({ children, color = 'red', ...props }: BallProps) => {
-  const { rootActor } = useContext(MachineContext);
-  const { eventManager } = useSelector(rootActor, ({ context }) => context);
+  const rootActor = MachineContext.useActorRef();
+  // const { rootActor } = useContext(MachineContext);
+  // const { eventManager } = useSelector(rootActor, ({ context }) => context);
+  const { eventManager } = MachineContext.useSelector(({ context }) => context);
   const getThree = useThree(({ get }) => get);
 
   const rigidBodyRef = useRef<RapierRigidBody>(null!);

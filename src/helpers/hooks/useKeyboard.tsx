@@ -6,9 +6,12 @@ import { useSelector } from '@xstate/react';
 import { useContext } from 'react';
 
 export function useKeyboard() {
+  // const { rootActor } = useContext(MachineContext);
+  // const { eventManager } = useSelector(rootActor, ({ context }) => context);
+
   const getThree = useThree(({ get }) => get);
-  const { rootActor } = useContext(MachineContext);
-  const { eventManager } = useSelector(rootActor, ({ context }) => context);
+  const rootActor = MachineContext.useActorRef();
+  const { eventManager } = MachineContext.useSelector(({ context }) => context);
 
   useEventListener('keydown', (event) => {
     const { camera } = getThree();
