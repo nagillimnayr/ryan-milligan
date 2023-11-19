@@ -24,7 +24,11 @@ const TEXT_COLOR_DARK = 'white';
 type Name3DProps = Pick<Object3DProps, 'position' | 'scale' | 'rotation'> & {
   children: string;
 };
-export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
+export const Name3D = function Name3D({
+  children,
+  scale,
+  ...props
+}: Name3DProps) {
   const { theme } = useTheme();
   const themeRef = useRef<string | undefined>(null!);
   themeRef.current = theme;
@@ -44,24 +48,26 @@ export const Name3D = function Name3D({ children, ...props }: Name3DProps) {
   const startX = -numOfChars / 2;
   return (
     <>
-      <group ref={pivotRef} {...props} scale={2}>
-        <object3D scale-z={0.5}>
+      <group ref={pivotRef} {...props}>
+        <object3D>
           {charArray.map((value, index) => {
             const [char, key] = value;
             return (
               <RigidBody
                 colliders={'hull'}
-                position-y={1}
-                position-x={startX + index}
+                // position-y={1}
                 // rotation-x={-PI_OVER_TWO}
                 key={key}
+                scale={2}
               >
-                <Center>
+                <Center position-y={1} position-x={startX + index}>
                   <anim.Text3D
                     ref={textRef}
                     font={FONT_URL}
                     letterSpacing={0.05}
                     height={1}
+                    scale-z={0.5}
+                    position-y={1}
                     castShadow
                     receiveShadow
                     // bevelEnabled
