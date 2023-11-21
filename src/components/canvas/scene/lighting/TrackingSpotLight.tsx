@@ -59,6 +59,8 @@ export const TrackingSpotLight = ({
     const spotLight = spotLightRef.current;
     coneRef.current = spotLight.children[0] as THREE.Mesh;
     spotLight.target.position.set(0, 0, 0);
+    spotLight.target.getWorldPosition(_targetPos);
+    spotLight.lookAt(_targetPos);
   }, []);
 
   return (
