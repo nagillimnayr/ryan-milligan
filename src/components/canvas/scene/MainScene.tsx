@@ -26,7 +26,6 @@ import { Pendulum } from '../pendulum/Pendulum';
 import { TrackingSpotLight } from './lighting/TrackingSpotLight';
 import { useKeyboard } from '@/helpers/hooks/useKeyboard';
 import { CameraManager } from './CameraManager';
-import { DragonModel } from '@/components/canvas/models/DragonModel';
 
 export const MainScene = () => {
   const dirLightRef = useRef<DirectionalLight>(null!);
@@ -36,7 +35,6 @@ export const MainScene = () => {
   useKeyboard();
   return (
     <>
-      <DragonModel />
       <color attach={'background'} args={['#202020']} />
       <fog attach={'fog'} args={['#202020', 5, 20]} />
       {/* <axesHelper scale={2} position-y={0.01} /> */}
