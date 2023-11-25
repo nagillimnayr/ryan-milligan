@@ -1,4 +1,4 @@
-import { RootState } from '@react-three/fiber';
+import { type RootState } from '@react-three/fiber';
 import { EventDispatcher } from 'three';
 import { assign, createMachine } from 'xstate';
 
