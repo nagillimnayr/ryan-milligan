@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { CameraManager } from '../CameraManager';
 import { Floor } from '../Floor';
 import * as THREE from 'three';
-import { Box, useHelper } from '@react-three/drei';
+import { Box, Environment, useHelper } from '@react-three/drei';
 import { TrackingSpotLight } from '../lighting/TrackingSpotLight';
 import { Cube } from './Cube';
 import { TWO_PI } from '@/helpers/constants';
@@ -27,33 +27,6 @@ export const TestScene = () => {
       <ambientLight intensity={0.05} />
       <CameraManager />
       <Floor />
-
-      <pointLight
-        ref={pointLightRef}
-        castShadow
-        position-y={10}
-        position-z={5}
-        distance={100}
-        intensity={100}
-      />
-      <pointLight
-        ref={pointLightRef}
-        castShadow
-        position-y={10}
-        position-z={-5}
-        position-x={-5}
-        distance={100}
-        intensity={100}
-      />
-      <pointLight
-        ref={pointLightRef}
-        castShadow
-        position-y={1}
-        position-z={0}
-        position-x={-8}
-        distance={100}
-        intensity={10}
-      />
 
       <TrackingSpotLight position={[2, 20, 5]} />
 
