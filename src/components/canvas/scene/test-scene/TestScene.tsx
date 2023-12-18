@@ -11,6 +11,7 @@ import { Brick } from '@/components/canvas/brick/Brick';
 import { Name3D } from '../../text/Name3D';
 import { useKeyboard } from '@/helpers/hooks/useKeyboard';
 import { Ball } from '../../ball/Ball';
+import { Player } from '../../player/Player';
 
 const RAND_POS_SCALAR = 20;
 const RAND_SCALE_SCALAR = 1;
@@ -36,7 +37,8 @@ export const TestScene = () => {
 
       <Name3D position-z={-5}>{'RYAN'}</Name3D>
 
-      <Ball position-y={3} />
+      {/* <Ball position-y={3} /> */}
+      <Player />
     </>
   );
 };
