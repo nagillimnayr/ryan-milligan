@@ -1,21 +1,24 @@
-import { PropsWithChildren, createContext, useMemo } from 'react';
-import { createActorContext, useInterpret } from '@xstate/react';
+import { type PropsWithChildren, useMemo, useCallback } from 'react';
+import { createActorContext } from '@xstate/react';
 import { rootMachine } from '@/state/root-machine';
-import { InterpreterFrom } from 'xstate';
+import { EventDispatcher } from 'three';
 
-// type MachineContextType = {
-//   rootActor: InterpreterFrom<typeof rootMachine>;
-// };
-// export const MachineContext = createContext<MachineContextType>(null!);
 export const MachineContext = createActorContext(rootMachine);
 
 export const MachineProvider = ({ children }: PropsWithChildren) => {
-  // const rootActor = useInterpret(rootMachine, { id: 'root-machine' });
+  const machine = useCallback(
+    () =>
+      rootMachine.withContext(() => ({
+        eventManager: new EventDispatcher(),
+        getThree: null!,
+      })),
 
-  // const context: MachineContextType = useMemo(() => {
-  //   return {
-  //     rootActor: rootActor,
-  //   };
-  // }, [rootActor]);
-  return <MachineContext.Provider>{children}</MachineContext.Provider>;
+    [],
+  );
+
+  return (
+    <MachineContext.Provider machine={machine}>
+      {children}
+    </MachineContext.Provider>
+  );
 };
