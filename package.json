@@ -97,8 +97,7 @@
     "unified": "^10.1.2",
     "valtio": "^1.10.6",
     "xstate": "^4.38.3",
-    "zod": "^3.21.4",
-    "zustand": "^4.4.6"
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@iconify-json/arcticons": "^1.1.61",
